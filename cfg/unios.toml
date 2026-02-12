@@ -3,7 +3,7 @@
 # 基础配置
 [basic]
 DEBUG = true
-SECRET_KEY = "your-secret-key-here"
+SECRET_KEY = "quant-vnpy"
 
 # 数据库配置
 [database]
@@ -11,7 +11,7 @@ DATABASE_NAME = "vnpy"
 DATABASE_HOST = "localhost"
 DATABASE_PORT = 3306
 DATABASE_USER = "root"
-DATABASE_PASSWORD = "password"
+DATABASE_PASSWORD = "lixn"
 
 # 交易接口配置
 [gateway]
