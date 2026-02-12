@@ -1,0 +1,24 @@
+[project]
+name = "quant-vnpy"
+version = "0.1.0"
+description = ""
+authors = [
+    {name = "lixn",email = "lixn@unitechs.com"}
+]
+readme = "README.md"
+requires-python = ">=3.10,<3.14"  # 关键修改：添加 <3.14 限制
+dependencies = [
+    "Flask>=2.0.0,<3.0.0",
+    "Flask-RESTful>=0.3.9,<1.0.0",
+    "vnpy>=4.3.0,<5.0.0",
+    "vnpy-ctastrategy>=1.4.0,<2.0.0",
+    "flask-restx (>=1.3.2,<2.0.0)",
+    "baostock (>=0.8.9,<0.9.0)",
+    "akshare (>=1.18.24,<2.0.0)"
+]
+[tool.poetry]
+package-mode = false
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+requires-python = ">=3.10"  # 构建系统的版本约束可简化，无需限制 <3.14
+build-backend = "poetry.core.masonry.api"

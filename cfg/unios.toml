@@ -1,0 +1,146 @@
+# 量化交易系统配置文件
+
+# 基础配置
+[basic]
+DEBUG = true
+SECRET_KEY = "your-secret-key-here"
+
+# 数据库配置
+[database]
+DATABASE_NAME = "vnpy"
+DATABASE_HOST = "localhost"
+DATABASE_PORT = 3306
+DATABASE_USER = "root"
+DATABASE_PASSWORD = "password"
+
+# 交易接口配置
+[gateway]
+GATEWAY_NAME = "CTP"
+
+[gateway.setting]
+userid = ""
+password = ""
+brokerid = ""
+td_address = ""
+md_address = ""
+app_id = ""
+auth_code = ""
+
+# 日志配置
+[logging]
+LOG_LEVEL = "INFO"
+LOG_FILE = "logs/vnpy.log"
+LOG_CONSOLE = true
+
+# 日志分割配置
+[logging.rotation]
+LOG_ROTATION_TYPE = "size"
+LOG_MAX_BYTES = 10485760
+LOG_ROTATION_WHEN = "D"
+LOG_ROTATION_INTERVAL = 1
+LOG_BACKUP_COUNT = 5
+
+# 日志清理配置
+[logging.cleanup]
+LOG_CLEANUP_ENABLED = true
+LOG_DAYS_TO_KEEP = 7
+
+# 策略配置
+[strategy]
+STRATEGY_NAME = "my_strategy"
+STRATEGY_SYMBOL = "IF2312.CFFEX"
+STRATEGY_INTERVAL = "1m"
+
+# 风控配置
+[risk]
+MAX_POSITION_SIZE = 10
+MAX_DAILY_TRADES = 100
+MAX_DAILY_LOSS = 10000
+STOP_LOSS_RATIO = 0.02
+TAKE_PROFIT_RATIO = 0.03
+
+# 回测配置
+[backtest]
+BACKTEST_START = "2023-01-01"
+BACKTEST_END = "2023-12-31"
+BACKTEST_CAPITAL = 1000000
+BACKTEST_RATE = 0.0001
+BACKTEST_SLIPPAGE = 0.0
+BACKTEST_SIZE = 1
+BACKTEST_PRICETICK = 0.01
+
+# 股票交易配置
+[stock]
+DIVIDEND_ADJUSTMENT_ENABLED = true
+DIVIDEND_DATA_PATH = "data/dividends"
+DIVIDEND_UPDATE_INTERVAL = 30
+
+# 交易成本配置
+[trading_cost]
+commission_rate = 0.0003
+min_commission = 5.0
+stamp_tax_rate = 0.001
+transfer_fee_rate = 0.00002
+min_transfer_fee = 0.0
+jing_shou_fee_rate = 0.0000487
+supervision_fee_rate = 0.00002
+other_fees = 0.0
+
+# 券商配置
+[broker]
+BROKER_NAME = "华泰证券"
+
+[broker.config]
+user_id = ""
+password = ""
+broker_id = ""
+app_id = ""
+auth_code = ""
+
+# 股票账户配置
+[account]
+initial_balance = 1000000
+max_position_per_stock = 0.3
+max_position_per_industry = 0.5
+total_positions_limit = 20
+
+# 交易时间配置
+[trading_time]
+market = "A_SHARE"
+holiday_file = "data/holidays.json"
+
+[trading_time.special_trading_days]
+
+# 停牌股票配置
+[suspended_stocks]
+SUSPENDED_STOCKS_FILE = "data/suspended_stocks.json"
+SUSPENDED_STOCKS_UPDATE_INTERVAL = 60
+
+# 数据源配置
+[data_source]
+DATA_SOURCE = "tushare"
+DATA_TOKEN = ""
+TUSHARE_TOKEN = "6e3b9122d7d20ecdd3493b408bb1a737bcd2c3ee90f8b80ba0105635"
+AKSHARE_TOKEN = ""
+BAOSTOCK_TOKEN = ""
+DATA_CACHE_DIR = "data/cache"
+DATA_DOWNLOAD_DIR = "data/download"
+
+# API 配置
+[api]
+API_HOST = "0.0.0.0"
+API_PORT = 5000
+API_PREFIX = "/api"
+
+# 任务管理配置
+[task]
+TASK_TIMEOUT = 3600
+TASK_MAX_RETRIES = 3
+TASK_LOG_DIR = "logs/tasks"
+
+# 环境配置
+[env]
+development = "internal.config.config_dev.DevelopmentConfig"
+production = "internal.config.config_prod.ProductionConfig"
+testing = "internal.config.config_test.TestingConfig"
+default = "internal.config.config.Config"
