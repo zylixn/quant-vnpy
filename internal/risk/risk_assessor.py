@@ -188,13 +188,13 @@ class StrategyRiskAssessor:
         """评估策略风险"""
         if not self.trades:
             return {
-                'strategy_name': self.strategy_name,
-                'total_trades': 0,
-                'win_rate': 0.0,
-                'profit_factor': 0.0,
-                'avg_trade_pnl': 0.0,
-                'max_win': 0.0,
-                'max_loss': 0.0
+                'strategy_name': self.strategy_name,  # 策略名称
+                'total_trades': 0,  # 总交易次数
+                'win_rate': 0.0,  # 胜率
+                'profit_factor': 0.0,  # 盈利因子
+                'avg_trade_pnl': 0.0,  # 平均每笔交易盈亏
+                'max_win': 0.0,  # 最大盈利
+                'max_loss': 0.0  # 最大亏损
             }
         
         win_rate = RiskMetrics.calculate_win_rate(self.trades)
@@ -206,15 +206,15 @@ class StrategyRiskAssessor:
         max_loss = min(pnls) if pnls else 0.0
         
         metrics = {
-            'strategy_name': self.strategy_name,
-            'total_trades': len(self.trades),
-            'win_rate': win_rate,
-            'profit_factor': profit_factor,
-            'avg_trade_pnl': avg_trade_pnl,
-            'max_win': max_win,
-            'max_loss': max_loss,
-            'strategy_params': self.params,
-            'current_indicators': self.indicators
+            'strategy_name': self.strategy_name,  # 策略名称
+            'total_trades': len(self.trades),  # 总交易次数
+            'win_rate': win_rate,  # 胜率
+            'profit_factor': profit_factor,  # 盈利因子
+            'avg_trade_pnl': avg_trade_pnl,  # 平均每笔交易盈亏
+            'max_win': max_win,  # 最大盈利
+            'max_loss': max_loss,  # 最大亏损
+            'strategy_params': self.params,  # 策略参数
+            'current_indicators': self.indicators  # 当前指标值
         }
         return metrics
 
