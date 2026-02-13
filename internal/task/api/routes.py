@@ -16,6 +16,7 @@ from internal.task.tasks import (
     FullWorkflowTask,
     StockAnalysisTask
 )
+from internal.utils import get_logger, set_req_id, clear_req_id
 
 # 创建任务管理命名空间
 tasks_ns = Namespace('tasks', description='任务管理相关操作')
@@ -74,7 +75,11 @@ class CreateTask(Resource):
     @tasks_ns.marshal_with(response_error, code=500)
     def post(self):
         """创建任务"""
+        req_id = None
         try:
+            # 生成 reqId
+            req_id = set_req_id()
+            
             data = tasks_ns.payload
             task_type = data.get('task_type')
             params = data.get('params', {})
@@ -103,6 +108,10 @@ class CreateTask(Resource):
             return {'task_id': task_id}
         except Exception as e:
             return {'error': str(e)}, 500
+        finally:
+            # 清除 reqId
+            if req_id:
+                clear_req_id()
 
 
 @tasks_ns.route('/list')
@@ -115,12 +124,20 @@ class ListTasks(Resource):
     @tasks_ns.marshal_with(response_error, code=500)
     def get(self):
         """列出任务"""
+        req_id = None
         try:
+            # 生成 reqId
+            req_id = set_req_id()
+            
             status = tasks_ns.request.args.get('status')
             tasks = task_manager.list_tasks(status=status)
             return {'tasks': [task.to_dict() for task in tasks]}
         except Exception as e:
             return {'error': str(e)}, 500
+        finally:
+            # 清除 reqId
+            if req_id:
+                clear_req_id()
 
 
 @tasks_ns.route('/get/<task_id>')
@@ -134,13 +151,21 @@ class GetTask(Resource):
     @tasks_ns.marshal_with(response_error, code=500)
     def get(self, task_id):
         """获取任务"""
+        req_id = None
         try:
+            # 生成 reqId
+            req_id = set_req_id()
+            
             task = task_manager.get_task(task_id)
             if not task:
                 return {'error': 'Task not found'}, 404
             return task.to_dict()
         except Exception as e:
             return {'error': str(e)}, 500
+        finally:
+            # 清除 reqId
+            if req_id:
+                clear_req_id()
 
 
 @tasks_ns.route('/start/<task_id>')
@@ -153,11 +178,19 @@ class StartTask(Resource):
     @tasks_ns.marshal_with(response_error, code=500)
     def post(self, task_id):
         """启动任务"""
+        req_id = None
         try:
+            # 生成 reqId
+            req_id = set_req_id()
+            
             result = task_manager.start_task(task_id)
             return {'success': result}
         except Exception as e:
             return {'error': str(e)}, 500
+        finally:
+            # 清除 reqId
+            if req_id:
+                clear_req_id()
 
 
 @tasks_ns.route('/stop/<task_id>')
@@ -170,11 +203,19 @@ class StopTask(Resource):
     @tasks_ns.marshal_with(response_error, code=500)
     def post(self, task_id):
         """停止任务"""
+        req_id = None
         try:
+            # 生成 reqId
+            req_id = set_req_id()
+            
             result = task_manager.stop_task(task_id)
             return {'success': result}
         except Exception as e:
             return {'error': str(e)}, 500
+        finally:
+            # 清除 reqId
+            if req_id:
+                clear_req_id()
 
 
 @tasks_ns.route('/delete/<task_id>')

@@ -1,8 +1,9 @@
 from flask import Flask
 from flask_restx import Api
 from internal.config import ConfigManager, get_config, TomlConfig
-from app.api.resources import health
+from app.api.resources.health import health_ns
 from internal.utils import get_logger
+from internal.database import init_vnpy_database
 from internal.trading.api.routes import trading_ns
 from internal.risk.routes import risk_ns
 from internal.fetcher.api.routes import fetcher_ns
@@ -15,14 +16,26 @@ def initialize_logging():
     logger = get_logger('app')
     logger.info('Logging system initialized')
 
+def initialize_vnpy():
+    """初始化 vnpy 数据库"""
+    try:
+        init_vnpy_database()
+    except Exception as e:
+        logger = get_logger('app')
+        logger.error(f"初始化 vnpy 失败: {e}")
+
 def create_app(config_name=None):
     """创建Flask应用实例"""
     app = Flask(__name__)
     
     # 加载配置
     app.config.from_object(TomlConfig())  # 使用TomlConfig类
+    
     # 初始化日志系统
     initialize_logging()
+    
+    # 初始化 vnpy 数据库
+    initialize_vnpy()
     # 创建Flask-RESTX Api对象，用于生成Swagger文档
     api = Api(
         app,
@@ -34,7 +47,7 @@ def create_app(config_name=None):
     )
     
     # 注册健康检查命名空间
-    api.add_namespace(health.health_ns, path='/api/health')
+    api.add_namespace(health_ns, path='/api/health')
     
     # 注册交易命名空间
     api.add_namespace(trading_ns, path='/api/trading')

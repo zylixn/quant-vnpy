@@ -4,6 +4,7 @@
 
 from flask_restx import Namespace, Resource, fields
 from internal.trading.simulator.simulator import TradingSimulator
+from internal.utils import get_logger, set_req_id, clear_req_id
 
 # 创建交易模拟器实例
 simulator = TradingSimulator()
@@ -94,8 +95,19 @@ class Account(Resource):
     @trading_ns.marshal_with(account_response)
     def get(self):
         """获取账户信息"""
-        account_info = simulator.get_account_info()
-        return account_info
+        req_id = None
+        try:
+            # 生成 reqId
+            req_id = set_req_id()
+            
+            account_info = simulator.get_account_info()
+            return account_info
+        except Exception as e:
+            return {'error': str(e)}, 500
+        finally:
+            # 清除 reqId
+            if req_id:
+                clear_req_id()
 
 
 @trading_ns.route('/positions')
@@ -106,8 +118,19 @@ class Positions(Resource):
     @trading_ns.marshal_with(position_response, as_list=True)
     def get(self):
         """获取持仓信息"""
-        positions = simulator.get_positions()
-        return positions
+        req_id = None
+        try:
+            # 生成 reqId
+            req_id = set_req_id()
+            
+            positions = simulator.get_positions()
+            return positions
+        except Exception as e:
+            return {'error': str(e)}, 500
+        finally:
+            # 清除 reqId
+            if req_id:
+                clear_req_id()
 
 
 @trading_ns.route('/orders')
@@ -118,8 +141,19 @@ class Orders(Resource):
     @trading_ns.marshal_with(order_response, as_list=True)
     def get(self):
         """获取订单信息"""
-        orders = simulator.get_orders()
-        return orders
+        req_id = None
+        try:
+            # 生成 reqId
+            req_id = set_req_id()
+            
+            orders = simulator.get_orders()
+            return orders
+        except Exception as e:
+            return {'error': str(e)}, 500
+        finally:
+            # 清除 reqId
+            if req_id:
+                clear_req_id()
 
 
 @trading_ns.route('/trades')
@@ -130,8 +164,19 @@ class Trades(Resource):
     @trading_ns.marshal_with(trade_response, as_list=True)
     def get(self):
         """获取成交信息"""
-        trades = simulator.get_trades()
-        return trades
+        req_id = None
+        try:
+            # 生成 reqId
+            req_id = set_req_id()
+            
+            trades = simulator.get_trades()
+            return trades
+        except Exception as e:
+            return {'error': str(e)}, 500
+        finally:
+            # 清除 reqId
+            if req_id:
+                clear_req_id()
 
 
 @trading_ns.route('/order/buy')
@@ -144,20 +189,31 @@ class BuyOrder(Resource):
     @trading_ns.marshal_with(order_error_response, code=400)
     def post(self):
         """买入"""
-        data = trading_ns.payload
-        symbol = data.get('symbol')
-        price = data.get('price')
-        volume = data.get('volume')
-        
-        if not all([symbol, price, volume]):
-            return {'error': '缺少必要参数', 'order_id': ''}, 400
-        
-        order_id, error = simulator.buy(symbol, price, volume)
-        
-        if error:
-            return {'error': error, 'order_id': order_id}, 400
-        
-        return {'order_id': order_id, 'message': '下单成功'}
+        req_id = None
+        try:
+            # 生成 reqId
+            req_id = set_req_id()
+            
+            data = trading_ns.payload
+            symbol = data.get('symbol')
+            price = data.get('price')
+            volume = data.get('volume')
+            
+            if not all([symbol, price, volume]):
+                return {'error': '缺少必要参数', 'order_id': ''}, 400
+            
+            order_id, error = simulator.buy(symbol, price, volume)
+            
+            if error:
+                return {'error': error, 'order_id': order_id}, 400
+            
+            return {'order_id': order_id, 'message': '下单成功'}
+        except Exception as e:
+            return {'error': str(e), 'order_id': ''}, 500
+        finally:
+            # 清除 reqId
+            if req_id:
+                clear_req_id()
 
 
 @trading_ns.route('/order/sell')
@@ -170,20 +226,31 @@ class SellOrder(Resource):
     @trading_ns.marshal_with(order_error_response, code=400)
     def post(self):
         """卖出"""
-        data = trading_ns.payload
-        symbol = data.get('symbol')
-        price = data.get('price')
-        volume = data.get('volume')
-        
-        if not all([symbol, price, volume]):
-            return {'error': '缺少必要参数', 'order_id': ''}, 400
-        
-        order_id, error = simulator.sell(symbol, price, volume)
-        
-        if error:
-            return {'error': error, 'order_id': order_id}, 400
-        
-        return {'order_id': order_id, 'message': '下单成功'}
+        req_id = None
+        try:
+            # 生成 reqId
+            req_id = set_req_id()
+            
+            data = trading_ns.payload
+            symbol = data.get('symbol')
+            price = data.get('price')
+            volume = data.get('volume')
+            
+            if not all([symbol, price, volume]):
+                return {'error': '缺少必要参数', 'order_id': ''}, 400
+            
+            order_id, error = simulator.sell(symbol, price, volume)
+            
+            if error:
+                return {'error': error, 'order_id': order_id}, 400
+            
+            return {'order_id': order_id, 'message': '下单成功'}
+        except Exception as e:
+            return {'error': str(e), 'order_id': ''}, 500
+        finally:
+            # 清除 reqId
+            if req_id:
+                clear_req_id()
 
 
 @trading_ns.route('/order/cancel/<order_id>')
@@ -195,11 +262,22 @@ class CancelOrder(Resource):
     @trading_ns.marshal_with(response_error, code=400)
     def post(self, order_id):
         """撤单"""
-        success = simulator.cancel_order(order_id)
-        if success:
-            return {'message': '撤单成功'}
-        else:
-            return {'error': '撤单失败'}, 400
+        req_id = None
+        try:
+            # 生成 reqId
+            req_id = set_req_id()
+            
+            success = simulator.cancel_order(order_id)
+            if success:
+                return {'message': '撤单成功'}
+            else:
+                return {'error': '撤单失败'}, 400
+        except Exception as e:
+            return {'error': str(e)}, 500
+        finally:
+            # 清除 reqId
+            if req_id:
+                clear_req_id()
 
 
 @trading_ns.route('/reset')
@@ -211,11 +289,22 @@ class ResetSimulator(Resource):
     @trading_ns.marshal_with(response_message)
     def post(self):
         """重置模拟器"""
-        data = trading_ns.payload
-        initial_balance = data.get('initial_balance')
-        
-        simulator.reset(initial_balance)
-        return {'message': '重置成功'}
+        req_id = None
+        try:
+            # 生成 reqId
+            req_id = set_req_id()
+            
+            data = trading_ns.payload
+            initial_balance = data.get('initial_balance')
+            
+            simulator.reset(initial_balance)
+            return {'message': '重置成功'}
+        except Exception as e:
+            return {'error': str(e)}, 500
+        finally:
+            # 清除 reqId
+            if req_id:
+                clear_req_id()
 
 
 @trading_ns.route('/price')
@@ -228,12 +317,23 @@ class SetPrice(Resource):
     @trading_ns.marshal_with(response_error, code=400)
     def post(self):
         """设置合约价格"""
-        data = trading_ns.payload
-        symbol = data.get('symbol')
-        price = data.get('price')
-        
-        if not all([symbol, price]):
-            return {'error': '缺少必要参数'}, 400
-        
-        simulator.set_symbol_price(symbol, price)
-        return {'message': '设置成功'}
+        req_id = None
+        try:
+            # 生成 reqId
+            req_id = set_req_id()
+            
+            data = trading_ns.payload
+            symbol = data.get('symbol')
+            price = data.get('price')
+            
+            if not all([symbol, price]):
+                return {'error': '缺少必要参数'}, 400
+            
+            simulator.set_symbol_price(symbol, price)
+            return {'message': '设置成功'}
+        except Exception as e:
+            return {'error': str(e)}, 500
+        finally:
+            # 清除 reqId
+            if req_id:
+                clear_req_id()

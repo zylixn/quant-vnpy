@@ -3,14 +3,15 @@
 """
 
 from flask_restx import Namespace, Resource, fields
-from datetime import datetime
+from datetime import datetime, timedelta
 from vnpy.trader.constant import Exchange, Interval
 from internal.backtest import BacktestEngine, DataLoader, BacktestAnalyzer
 from internal.backtest.strategies import DemoBacktestStrategy, MACDBacktestStrategy, RSIBacktestStrategy
+from internal.utils import get_logger, set_req_id, clear_req_id
 
 # 创建回测命名空间
 backtest_ns = Namespace('backtest', description='回测相关操作')
-
+logger = get_logger('backtest.api')
 # 定义响应模型
 trade_response = backtest_ns.model('TradeResponse', {
     'trade_id': fields.String(description='交易ID'),
@@ -65,7 +66,7 @@ download_data_response = backtest_ns.model('DownloadDataResponse', {
 })
 
 parameters_response = backtest_ns.model('ParametersResponse', {
-    'symbol': fields.String(description='交易标的'),
+    'symbol': fields.String(description='交易标的或者股票代码'),
     'exchange': fields.String(description='交易所'),
     'interval': fields.String(description='时间周期'),
     'start': fields.String(description='开始时间'),
@@ -80,8 +81,8 @@ response_error = backtest_ns.model('ResponseError', {
 
 # 定义请求模型
 run_backtest_request = backtest_ns.model('RunBacktestRequest', {
-    'symbol': fields.String(description='交易标的', default='BTC/USDT'),
-    'exchange': fields.String(description='交易所', default='BINANCE'),
+    'symbol': fields.String(description='交易标的或者股票代码', default='601179'),
+    'exchange': fields.String(description='交易所', default='SSE'),
     'interval': fields.String(description='时间周期', default='1m'),
     'start': fields.String(description='开始时间', default='2023-01-01T00:00:00'),
     'end': fields.String(description='结束时间', default='2023-01-31T23:59:59'),
@@ -109,34 +110,67 @@ class RunBacktest(Resource):
     
     @backtest_ns.doc('run_backtest')
     @backtest_ns.expect(run_backtest_request)
-    @backtest_ns.marshal_with(run_backtest_response, code=200)
-    @backtest_ns.marshal_with(response_error, code=400)
-    @backtest_ns.marshal_with(response_error, code=500)
+    # @backtest_ns.marshal_with(run_backtest_response, code=200)
+    # @backtest_ns.marshal_with(response_error, code=400)
+    # @backtest_ns.marshal_with(response_error, code=500)
     def post(self):
         """运行回测"""
+        req_id = None
         try:
-            data = backtest_ns.payload
+            # 生成 reqId
+            req_id = set_req_id()
             
+            data = backtest_ns.payload
             # 解析参数
             symbol = data.get('symbol', 'BTC/USDT')
             exchange = data.get('exchange', 'BINANCE')
-            interval = data.get('interval', '1m')
-            start = datetime.fromisoformat(data.get('start', '2023-01-01T00:00:00'))
-            end = datetime.fromisoformat(data.get('end', '2023-01-31T23:59:59'))
+            interval_str = data.get('interval', '1m')
+            # 默认起始时间为前一个月，终止时间为当前时间
+            default_end = datetime.now()
+            default_start = default_end - timedelta(days=30)
+            start = datetime.fromisoformat(data.get('start', default_start.isoformat()))
+            end = datetime.fromisoformat(data.get('end', default_end.isoformat()))
             strategy_name = data.get('strategy', 'demo')
             strategy_params = data.get('params', {})
+            # 记录参数值
+            logger.info(f"Parameters: strategy_name={strategy_name}, symbol={symbol}, exchange={exchange}, interval={interval_str}, start={start}, end={end}")
+            # 转换 interval 字符串到 Interval 枚举
+            interval_map = {
+                '1m': Interval.MINUTE,
+                '5m': Interval.MINUTE,
+                '15m': Interval.MINUTE,
+                '30m': Interval.MINUTE,
+                '1h': Interval.HOUR,
+                'd': Interval.DAILY,
+                '1d': Interval.DAILY,
+                'w': Interval.WEEKLY,
+                '1w': Interval.WEEKLY
+            }
+            interval = interval_map.get(interval_str, Interval.MINUTE)
+            
+            # 转换 exchange 字符串到 Exchange 枚举
+            exchange_map = {
+                'BINANCE': Exchange.LOCAL,
+                'SSE': Exchange.SSE,
+                'SZSE': Exchange.SZSE
+            }
+            exchange = exchange_map.get(exchange, Exchange.LOCAL)
             
             # 创建回测引擎
             engine = BacktestEngine()
             
             # 设置回测参数
-            engine.set_parameters(
-                vt_symbol=f"{symbol}:{exchange}",
-                interval=Interval(interval),
-                start=start,
-                end=end
-            )
-            
+            try:
+                # 使用 "." 作为分隔符，而不是 ":"，因为底层代码使用 split(".")
+                engine.set_parameters(
+                    vt_symbol=f"{symbol}.{exchange.value}",
+                    interval=interval,
+                    start=start,
+                    end=end
+                )
+            except Exception as e:
+                logger.error(f"Error in set_parameters(): {str(e)}")
+                raise
             # 添加策略
             if strategy_name == 'demo':
                 engine.add_strategy(DemoBacktestStrategy, strategy_params)
@@ -146,33 +180,60 @@ class RunBacktest(Resource):
                 engine.add_strategy(RSIBacktestStrategy, strategy_params)
             else:
                 return {'error': 'Unknown strategy'}, 400
-            
             # 运行回测
-            results = engine.run_backtesting()
-            statistics = engine.calculate_statistics()
+            try:
+                engine.load_data()
+                results = engine.run_backtesting()
+            except Exception as e:
+                logger.error(f"Error in run_backtesting(): {str(e)}")
+                raise
+            
+            try:
+                statistics = engine.calculate_statistics()
+            except Exception as e:
+                logger.error(f"Error in calculate_statistics(): {str(e)}")
+                raise
             
             # 构建响应
-            response = {
-                'status': 'success',
-                'statistics': statistics,
-                'trades': [
-                    {
-                        'trade_id': t.trade_id,
+            try:
+                trades = engine.get_trades()
+                logger.info(f"get_trades() returned type: {type(trades)}, length: {len(trades) if hasattr(trades, '__len__') else 'N/A'}")
+                if trades and len(trades) > 0:
+                    logger.info(f"First trade type: {type(trades[0])}, content: {trades[0]}")
+            except Exception as e:
+                logger.error(f"Error in get_trades(): {str(e)}")
+                raise
+            
+            try:
+                trades_list = []
+                for t in trades:
+                    trades_list.append({
+                        'trade_id': t.tradeid,
                         'symbol': t.symbol,
                         'direction': t.direction.value,
                         'offset': t.offset.value,
                         'price': t.price,
                         'volume': t.volume,
-                        'trade_time': t.trade_time.isoformat(),
-                        'pnl': t.pnl
-                    }
-                    for t in engine.get_trades()
-                ]
-            }
+                        'trade_time': t.datetime.isoformat()
+                    })
+                
+                response = {
+                    'status': 'success',
+                    'statistics': statistics,
+                    'trades': trades_list
+                }
+            except Exception as e:
+                logger.error(f"Error building response: {str(e)}")
+                raise
             
             return response
         except Exception as e:
+            logger.error(f"Error running backtest: {str(e)}")
             return {'error': str(e)}, 500
+        finally:
+            # 清除 reqId
+            if req_id:
+                clear_req_id()
 
 
 @backtest_ns.route('/strategies')

@@ -6,7 +6,7 @@ from flask_restx import Namespace, Resource, fields
 from datetime import datetime
 from vnpy.trader.constant import Exchange, Interval
 from internal.fetcher import StockFetcher
-from internal.utils import get_logger
+from internal.utils import get_logger, set_req_id, clear_req_id
 
 # 获取日志器
 logger = get_logger('fetcher.api')
@@ -107,7 +107,11 @@ class StockData(Resource):
     # @fetcher_ns.marshal_with(response_error, code=500)
     def post(self):
         """获取股票数据"""
+        req_id = None
         try:
+            # 生成 reqId
+            req_id = set_req_id()
+            
             data = fetcher_ns.payload
             
             # 解析参数
@@ -174,6 +178,10 @@ class StockData(Resource):
             return response
         except Exception as e:
             return {'error': str(e)}, 500
+        finally:
+            # 清除 reqId
+            if req_id:
+                clear_req_id()
 
 
 @fetcher_ns.route('/stock/list')
@@ -187,7 +195,11 @@ class StockList(Resource):
     @fetcher_ns.marshal_with(response_error, code=500)
     def get(self):
         """获取股票列表"""
+        req_id = None
         try:
+            # 生成 reqId
+            req_id = set_req_id()
+            
             exchange = fetcher_ns.request.args.get('exchange', 'SSE')
             source = fetcher_ns.request.args.get('source', 'api')
             
@@ -218,6 +230,10 @@ class StockList(Resource):
             return response
         except Exception as e:
             return {'error': str(e)}, 500
+        finally:
+            # 清除 reqId
+            if req_id:
+                clear_req_id()
 
 
 @fetcher_ns.route('/stock/info')
@@ -232,7 +248,11 @@ class StockInfo(Resource):
     @fetcher_ns.marshal_with(response_error, code=500)
     def get(self):
         """获取股票信息"""
+        req_id = None
         try:
+            # 生成 reqId
+            req_id = set_req_id()
+            
             symbol = fetcher_ns.request.args.get('symbol', '600000')
             exchange = fetcher_ns.request.args.get('exchange', 'SSE')
             source = fetcher_ns.request.args.get('source', 'api')
@@ -264,6 +284,10 @@ class StockInfo(Resource):
             return response
         except Exception as e:
             return {'error': str(e)}, 500
+        finally:
+            # 清除 reqId
+            if req_id:
+                clear_req_id()
 
 
 @fetcher_ns.route('/stock/realtime')
@@ -278,7 +302,11 @@ class RealtimeData(Resource):
     @fetcher_ns.marshal_with(response_error, code=500)
     def get(self):
         """获取实时数据"""
+        req_id = None
         try:
+            # 生成 reqId
+            req_id = set_req_id()
+            
             symbol = fetcher_ns.request.args.get('symbol', '600000')
             exchange = fetcher_ns.request.args.get('exchange', 'SSE')
             api_name = fetcher_ns.request.args.get('api_name', 'tushare')
@@ -325,6 +353,10 @@ class RealtimeData(Resource):
             return response
         except Exception as e:
             return {'error': str(e)}, 500
+        finally:
+            # 清除 reqId
+            if req_id:
+                clear_req_id()
 
 
 @fetcher_ns.route('/stock/index/components')
@@ -339,7 +371,11 @@ class IndexComponents(Resource):
     @fetcher_ns.marshal_with(response_error, code=500)
     def get(self):
         """获取指数成分股"""
+        req_id = None
         try:
+            # 生成 reqId
+            req_id = set_req_id()
+            
             index_symbol = fetcher_ns.request.args.get('index_symbol', '000001.SH')
             date = fetcher_ns.request.args.get('date', datetime.now().isoformat())
             api_name = fetcher_ns.request.args.get('api_name', 'tushare')
@@ -367,6 +403,10 @@ class IndexComponents(Resource):
             return response
         except Exception as e:
             return {'error': str(e)}, 500
+        finally:
+            # 清除 reqId
+            if req_id:
+                clear_req_id()
 
 
 @fetcher_ns.route('/stock/download')
@@ -379,7 +419,11 @@ class DownloadStockData(Resource):
     @fetcher_ns.marshal_with(response_error, code=500)
     def post(self):
         """下载股票数据"""
+        req_id = None
         try:
+            # 生成 reqId
+            req_id = set_req_id()
+            
             data = fetcher_ns.payload
             
             # 解析参数
@@ -433,6 +477,10 @@ class DownloadStockData(Resource):
             return response
         except Exception as e:
             return {'error': str(e)}, 500
+        finally:
+            # 清除 reqId
+            if req_id:
+                clear_req_id()
 
 
 @fetcher_ns.route('/stock/batch/download')
@@ -445,7 +493,11 @@ class BatchDownloadStockData(Resource):
     @fetcher_ns.marshal_with(response_error, code=500)
     def post(self):
         """批量下载股票数据"""
+        req_id = None
         try:
+            # 生成 reqId
+            req_id = set_req_id()
+            
             data = fetcher_ns.payload
             
             # 解析参数

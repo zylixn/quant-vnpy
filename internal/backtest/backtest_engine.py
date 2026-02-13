@@ -8,6 +8,7 @@ from datetime import datetime
 from typing import Dict, List, Optional, Tuple, Any
 from vnpy.trader.object import BarData, TickData, OrderData, TradeData
 from vnpy.trader.constant import Direction, Offset, Exchange, Interval
+from internal.utils import get_logger
 
 try:
     from vnpy.trader.database import database_manager
@@ -35,6 +36,7 @@ class BacktestEngine:
         self.strategy_class = None
         self.strategy_settings = {}
         self.backtest_results = {}
+        self.logger = get_logger('backtest.engine')
     
     def set_parameters(self, 
                       vt_symbol: str,          # 合约代码
@@ -86,13 +88,22 @@ class BacktestEngine:
     
     def run_backtesting(self) -> Dict[str, Any]:
         """运行回测"""
+        self.logger.info(f"开始运行回测，历史数据数量: {len(self.engine.history_data)}")
+        if len(self.engine.history_data) == 0:
+            self.logger.warning("历史数据为空，请检查数据库中是否有对应的数据")
+        else:
+            self.logger.info(f"第一条数据: {self.engine.history_data[0]}")
+            self.logger.info(f"最后一条数据: {self.engine.history_data[-1]}")
+        
         self.engine.run_backtesting()
         self.backtest_results = self.engine.calculate_result()
+        self.logger.info(f"回测完成，成交记录数量: {len(self.engine.trades)}")
         return self.backtest_results
     
     def calculate_statistics(self) -> Dict[str, Any]:
         """计算统计指标"""
-        if not self.backtest_results:
+        # 检查 backtest_results 是否为 None 或空 DataFrame
+        if self.backtest_results is None or (hasattr(self.backtest_results, 'empty') and self.backtest_results.empty):
             self.run_backtesting()
         
         statistics = self.engine.calculate_statistics()
@@ -100,7 +111,8 @@ class BacktestEngine:
     
     def show_chart(self):
         """显示回测图表"""
-        if not self.backtest_results:
+        # 检查 backtest_results 是否为 None 或空 DataFrame
+        if self.backtest_results is None or (hasattr(self.backtest_results, 'empty') and self.backtest_results.empty):
             self.run_backtesting()
         
         self.engine.show_chart()
@@ -109,7 +121,8 @@ class BacktestEngine:
                       filename: str = "backtest_results.json"  # 文件名
                       ):
         """导出回测结果"""
-        if not self.backtest_results:
+        # 检查 backtest_results 是否为 None 或空 DataFrame
+        if self.backtest_results is None or (hasattr(self.backtest_results, 'empty') and self.backtest_results.empty):
             self.run_backtesting()
         
         statistics = self.calculate_statistics()
@@ -136,7 +149,8 @@ class BacktestEngine:
     
     def get_daily_results(self) -> Dict[datetime, float]:
         """获取每日结果"""
-        if not self.backtest_results:
+        # 检查 backtest_results 是否为 None 或空 DataFrame
+        if self.backtest_results is None or (hasattr(self.backtest_results, 'empty') and self.backtest_results.empty):
             self.run_backtesting()
         
         return self.backtest_results.to_dict()

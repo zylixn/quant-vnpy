@@ -4,6 +4,8 @@
 
 import os
 import logging
+import uuid
+import threading
 from logging.handlers import RotatingFileHandler, TimedRotatingFileHandler
 from datetime import datetime, timedelta
 from internal.config import get_config
@@ -15,13 +17,57 @@ os.makedirs('logs/tasks', exist_ok=True)
 # 获取配置
 config = get_config()()  # 创建TomlConfig实例
 
+# 线程本地存储，用于存储 reqId
+_local = threading.local()
+
+def set_req_id(req_id=None):
+    """
+    设置当前线程的 reqId
+    
+    Args:
+        req_id (str): 请求ID，如果为None则自动生成
+    """
+    if req_id is None:
+        req_id = str(uuid.uuid4())
+    _local.req_id = req_id
+
+def get_req_id():
+    """
+    获取当前线程的 reqId
+    
+    Returns:
+        str: 请求ID
+    """
+    return getattr(_local, 'req_id', None)
+
+def clear_req_id():
+    """
+    清除当前线程的 reqId
+    """
+    if hasattr(_local, 'req_id'):
+        delattr(_local, 'req_id')
+
+# 自定义日志格式化器，支持 reqId
+class ReqIdFormatter(logging.Formatter):
+    """
+    支持 reqId 的日志格式化器
+    """
+    
+    def format(self, record):
+        req_id = get_req_id()
+        if req_id:
+            record.reqId = f"[reqId:{req_id}]"
+        else:
+            record.reqId = ""
+        return super().format(record)
+
 # 创建日志器
 logger = logging.getLogger('quant-vnpy')
 logger.setLevel(getattr(logging, config.LOG_LEVEL))
 
 # 创建日志格式化器
-formatter = logging.Formatter(
-    '%(asctime)s - %(name)s - %(levelname)s - %(filename)s:%(lineno)d - %(message)s'
+formatter = ReqIdFormatter(
+    '%(asctime)s - %(name)s - %(levelname)s - %(filename)s:%(lineno)d - %(reqId)s %(message)s'
 )
 
 # 确定使用哪种处理器
