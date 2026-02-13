@@ -13,13 +13,37 @@ from vnpy.trader.constant import Exchange, Interval
 from internal.utils import get_logger
 from internal.config import get_config
 
-try:
-    from vnpy.trader.database import database_manager
-except ImportError:
-    # 如果database_manager不存在，设置为None
-    database_manager = None
-
 logger = get_logger("fetcher")
+
+def get_database():
+    """获取 vnpy 数据库实例"""
+    try:
+        from vnpy.trader.database import get_database as vnpy_get_database
+        return vnpy_get_database()
+    except ImportError:
+        return None
+
+def get_db_tz():
+    """获取数据库时区"""
+    try:
+        from vnpy.trader.database import DB_TZ
+        return DB_TZ
+    except ImportError:
+        from zoneinfo import ZoneInfo
+        return ZoneInfo("Asia/Shanghai")
+
+def convert_tz(dt: datetime) -> datetime:
+    """转换时区"""
+    try:
+        from vnpy.trader.database import convert_tz as vnpy_convert_tz
+        return vnpy_convert_tz(dt)
+    except ImportError:
+        db_tz = get_db_tz()
+        if dt.tzinfo is None:
+            dt = dt.replace(tzinfo=db_tz)
+        dt = dt.astimezone(db_tz)
+        return dt.replace(tzinfo=None)
+        
 class LocalDataSource:
     """本地数据源"""
     
@@ -294,10 +318,13 @@ class APIDataSource:
             
             # 转换为BarData
             for _, row in df.iterrows():
+                bar_datetime = datetime.strptime(row['trade_date'], "%Y%m%d")
+                bar_datetime = convert_tz(bar_datetime)
+                
                 bar = BarData(
                     symbol=symbol,
                     exchange=exchange,
-                    datetime=datetime.strptime(row['trade_date'], "%Y%m%d"),
+                    datetime=bar_datetime,
                     interval=interval,
                     open_price=row['open'],
                     high_price=row['high'],
@@ -665,8 +692,13 @@ class DatabaseDataSource:
         bars = []
         
         try:
+            db = get_database()
+            if db is None:
+                print("数据库未初始化")
+                return bars
+            
             # 从数据库获取数据
-            bars = database_manager.load_bar_data(
+            bars = db.load_bar_data(
                 symbol=symbol,
                 exchange=exchange,
                 interval=interval,
@@ -684,7 +716,24 @@ class DatabaseDataSource:
     ):
         """保存数据到数据库"""
         try:
-            database_manager.save_bar_data(bars)
+            db = get_database()
+            if db is None:
+                print("数据库未初始化")
+                return
+            
+            # 确保 datetime 字段是正确的类型
+            import pandas as pd
+            db_tz = get_db_tz()
+            for bar in bars:
+                # 如果是 pandas.Timestamp，转换为 datetime
+                if isinstance(bar.datetime, pd.Timestamp):
+                    # 如果没有时区，先加上时区
+                    if bar.datetime.tzinfo is None:
+                        bar.datetime = bar.datetime.tz_localize(db_tz)
+                    # 转换为 datetime
+                    bar.datetime = bar.datetime.to_pydatetime()
+            
+            db.save_bar_data(bars)
         except Exception as e:
             print(f"保存数据到数据库失败: {e}")
     
@@ -697,6 +746,11 @@ class DatabaseDataSource:
         stocks = []
         
         try:
+            db = get_database()
+            if db is None:
+                print("数据库未初始化")
+                return stocks
+            
             # 从数据库获取股票列表
             # 这里需要根据实际的数据库结构实现
             pass
@@ -715,6 +769,11 @@ class DatabaseDataSource:
         info = {}
         
         try:
+            db = get_database()
+            if db is None:
+                print("数据库未初始化")
+                return info
+            
             # 从数据库获取股票信息
             # 这里需要根据实际的数据库结构实现
             pass

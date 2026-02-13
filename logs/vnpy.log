@@ -280,3 +280,238 @@ Index: []
 2026-02-13 14:37:04,986 - quant-vnpy.vnpy_init - INFO - vnpy_init.py:25 -  初始化 vnpy 数据库: root@localhost:3306/vnpy
 2026-02-13 14:37:05,052 - quant-vnpy.vnpy_init - WARNING - vnpy_init.py:42 -  vnpy_mysql 连接失败: (1045, "Access denied for user 'root'@'localhost' (using password: YES)")，使用 SQLite 数据库
 2026-02-13 14:37:05,060 - quant-vnpy.vnpy_init - INFO - vnpy_init.py:51 -  vnpy SQLite 数据库连接成功: D:\深度学习\代码\量化\quant-vnpy\data\vnpy_trader.db
+2026-02-13 15:00:55,172 - quant-vnpy.app - INFO - __init__.py:17 -  Logging system initialized
+2026-02-13 15:00:55,175 - quant-vnpy.vnpy_init - INFO - vnpy_init.py:25 -  初始化 vnpy 数据库: root@localhost:3306/vnpy
+2026-02-13 15:00:55,272 - quant-vnpy.vnpy_init - WARNING - vnpy_init.py:42 -  vnpy_mysql 连接失败: (1045, "Access denied for user 'root'@'localhost' (using password: YES)")，使用 SQLite 数据库
+2026-02-13 15:00:55,279 - quant-vnpy.vnpy_init - INFO - vnpy_init.py:51 -  vnpy SQLite 数据库连接成功: D:\深度学习\代码\量化\quant-vnpy\data\vnpy_trader.db
+2026-02-13 15:00:56,007 - quant-vnpy.app - INFO - __init__.py:17 -  Logging system initialized
+2026-02-13 15:00:56,010 - quant-vnpy.vnpy_init - INFO - vnpy_init.py:25 -  初始化 vnpy 数据库: root@localhost:3306/vnpy
+2026-02-13 15:00:56,060 - quant-vnpy.vnpy_init - WARNING - vnpy_init.py:42 -  vnpy_mysql 连接失败: (1045, "Access denied for user 'root'@'localhost' (using password: YES)")，使用 SQLite 数据库
+2026-02-13 15:00:56,067 - quant-vnpy.vnpy_init - INFO - vnpy_init.py:51 -  vnpy SQLite 数据库连接成功: D:\深度学习\代码\量化\quant-vnpy\data\vnpy_trader.db
+2026-02-13 15:02:17,619 - quant-vnpy.app - INFO - __init__.py:17 -  Logging system initialized
+2026-02-13 15:02:17,622 - quant-vnpy.vnpy_init - INFO - vnpy_init.py:25 -  初始化 vnpy 数据库: root@localhost:3306/vnpy
+2026-02-13 15:02:17,664 - quant-vnpy.vnpy_init - WARNING - vnpy_init.py:42 -  vnpy_mysql 连接失败: port should be of type int，使用 SQLite 数据库
+2026-02-13 15:02:17,670 - quant-vnpy.vnpy_init - INFO - vnpy_init.py:51 -  vnpy SQLite 数据库连接成功: D:\深度学习\代码\量化\quant-vnpy\data\vnpy_trader.db
+2026-02-13 15:02:18,416 - quant-vnpy.app - INFO - __init__.py:17 -  Logging system initialized
+2026-02-13 15:02:18,419 - quant-vnpy.vnpy_init - INFO - vnpy_init.py:25 -  初始化 vnpy 数据库: root@localhost:3306/vnpy
+2026-02-13 15:02:18,455 - quant-vnpy.vnpy_init - WARNING - vnpy_init.py:42 -  vnpy_mysql 连接失败: port should be of type int，使用 SQLite 数据库
+2026-02-13 15:02:18,461 - quant-vnpy.vnpy_init - INFO - vnpy_init.py:51 -  vnpy SQLite 数据库连接成功: D:\深度学习\代码\量化\quant-vnpy\data\vnpy_trader.db
+2026-02-13 15:02:41,551 - quant-vnpy.app - INFO - __init__.py:17 -  Logging system initialized
+2026-02-13 15:02:41,554 - quant-vnpy.vnpy_init - INFO - vnpy_init.py:25 -  初始化 vnpy 数据库: root@localhost:3306/vnpy
+2026-02-13 15:02:41,602 - quant-vnpy.vnpy_init - WARNING - vnpy_init.py:42 -  vnpy_mysql 连接失败: (1045, "Access denied for user 'root'@'localhost' (using password: YES)")，使用 SQLite 数据库
+2026-02-13 15:02:41,608 - quant-vnpy.vnpy_init - INFO - vnpy_init.py:51 -  vnpy SQLite 数据库连接成功: D:\深度学习\代码\量化\quant-vnpy\data\vnpy_trader.db
+2026-02-13 15:02:42,321 - quant-vnpy.app - INFO - __init__.py:17 -  Logging system initialized
+2026-02-13 15:02:42,324 - quant-vnpy.vnpy_init - INFO - vnpy_init.py:25 -  初始化 vnpy 数据库: root@localhost:3306/vnpy
+2026-02-13 15:02:42,391 - quant-vnpy.vnpy_init - WARNING - vnpy_init.py:42 -  vnpy_mysql 连接失败: (1045, "Access denied for user 'root'@'localhost' (using password: YES)")，使用 SQLite 数据库
+2026-02-13 15:02:42,397 - quant-vnpy.vnpy_init - INFO - vnpy_init.py:51 -  vnpy SQLite 数据库连接成功: D:\深度学习\代码\量化\quant-vnpy\data\vnpy_trader.db
+2026-02-13 15:06:27,943 - quant-vnpy.app - INFO - __init__.py:17 -  Logging system initialized
+2026-02-13 15:06:27,946 - quant-vnpy.vnpy_init - INFO - vnpy_init.py:25 -  初始化 vnpy 数据库: root@localhost:3306/vnpy
+2026-02-13 15:06:28,007 - quant-vnpy.vnpy_init - WARNING - vnpy_init.py:42 -  vnpy_mysql 连接失败: (1045, "Access denied for user 'root'@'localhost' (using password: YES)")，使用 SQLite 数据库
+2026-02-13 15:06:28,014 - quant-vnpy.vnpy_init - INFO - vnpy_init.py:51 -  vnpy SQLite 数据库连接成功: D:\深度学习\代码\量化\quant-vnpy\data\vnpy_trader.db
+2026-02-13 15:06:28,732 - quant-vnpy.app - INFO - __init__.py:17 -  Logging system initialized
+2026-02-13 15:06:28,734 - quant-vnpy.vnpy_init - INFO - vnpy_init.py:25 -  初始化 vnpy 数据库: root@localhost:3306/vnpy
+2026-02-13 15:06:28,811 - quant-vnpy.vnpy_init - WARNING - vnpy_init.py:42 -  vnpy_mysql 连接失败: (1045, "Access denied for user 'root'@'localhost' (using password: YES)")，使用 SQLite 数据库
+2026-02-13 15:06:28,817 - quant-vnpy.vnpy_init - INFO - vnpy_init.py:51 -  vnpy SQLite 数据库连接成功: D:\深度学习\代码\量化\quant-vnpy\data\vnpy_trader.db
+2026-02-13 15:08:42,385 - quant-vnpy.app - INFO - __init__.py:17 -  Logging system initialized
+2026-02-13 15:08:42,389 - quant-vnpy.vnpy_init - INFO - vnpy_init.py:25 -  初始化 vnpy 数据库: root@localhost:3306/vnpy
+2026-02-13 15:08:42,496 - quant-vnpy.vnpy_init - INFO - vnpy_init.py:39 -  vnpy MySQL 数据库连接成功
+2026-02-13 15:08:43,660 - quant-vnpy.app - INFO - __init__.py:17 -  Logging system initialized
+2026-02-13 15:08:43,663 - quant-vnpy.vnpy_init - INFO - vnpy_init.py:25 -  初始化 vnpy 数据库: root@localhost:3306/vnpy
+2026-02-13 15:08:43,755 - quant-vnpy.vnpy_init - INFO - vnpy_init.py:39 -  vnpy MySQL 数据库连接成功
+2026-02-13 15:22:27,440 - quant-vnpy.app - INFO - __init__.py:17 -  Logging system initialized
+2026-02-13 15:22:27,442 - quant-vnpy.vnpy_init - INFO - vnpy_init.py:25 -  初始化 vnpy 数据库: root@localhost:3306/vnpy
+2026-02-13 15:22:27,513 - quant-vnpy.vnpy_init - INFO - vnpy_init.py:39 -  vnpy MySQL 数据库连接成功
+2026-02-13 15:22:40,631 - quant-vnpy.app - INFO - __init__.py:17 -  Logging system initialized
+2026-02-13 15:22:40,634 - quant-vnpy.vnpy_init - INFO - vnpy_init.py:25 -  初始化 vnpy 数据库: root@localhost:3306/vnpy
+2026-02-13 15:22:40,720 - quant-vnpy.vnpy_init - INFO - vnpy_init.py:39 -  vnpy MySQL 数据库连接成功
+2026-02-13 15:22:53,373 - quant-vnpy.app - INFO - __init__.py:17 -  Logging system initialized
+2026-02-13 15:22:53,375 - quant-vnpy.vnpy_init - INFO - vnpy_init.py:25 -  初始化 vnpy 数据库: root@localhost:3306/vnpy
+2026-02-13 15:22:53,431 - quant-vnpy.vnpy_init - INFO - vnpy_init.py:39 -  vnpy MySQL 数据库连接成功
+2026-02-13 15:25:52,479 - quant-vnpy.app - INFO - __init__.py:17 -  Logging system initialized
+2026-02-13 15:25:52,482 - quant-vnpy.vnpy_init - INFO - vnpy_init.py:25 -  初始化 vnpy 数据库: root@localhost:3306/vnpy
+2026-02-13 15:25:52,558 - quant-vnpy.vnpy_init - INFO - vnpy_init.py:39 -  vnpy MySQL 数据库连接成功
+2026-02-13 15:25:58,899 - quant-vnpy.app - INFO - __init__.py:17 -  Logging system initialized
+2026-02-13 15:25:58,901 - quant-vnpy.vnpy_init - INFO - vnpy_init.py:25 -  初始化 vnpy 数据库: root@localhost:3306/vnpy
+2026-02-13 15:25:58,959 - quant-vnpy.vnpy_init - INFO - vnpy_init.py:39 -  vnpy MySQL 数据库连接成功
+2026-02-13 15:26:05,249 - quant-vnpy.app - INFO - __init__.py:17 -  Logging system initialized
+2026-02-13 15:26:05,251 - quant-vnpy.vnpy_init - INFO - vnpy_init.py:25 -  初始化 vnpy 数据库: root@localhost:3306/vnpy
+2026-02-13 15:26:05,305 - quant-vnpy.vnpy_init - INFO - vnpy_init.py:39 -  vnpy MySQL 数据库连接成功
+2026-02-13 15:26:15,790 - quant-vnpy.app - INFO - __init__.py:17 -  Logging system initialized
+2026-02-13 15:26:15,792 - quant-vnpy.vnpy_init - INFO - vnpy_init.py:25 -  初始化 vnpy 数据库: root@localhost:3306/vnpy
+2026-02-13 15:26:15,849 - quant-vnpy.vnpy_init - INFO - vnpy_init.py:39 -  vnpy MySQL 数据库连接成功
+2026-02-13 15:26:25,272 - quant-vnpy.app - INFO - __init__.py:17 -  Logging system initialized
+2026-02-13 15:26:25,275 - quant-vnpy.vnpy_init - INFO - vnpy_init.py:25 -  初始化 vnpy 数据库: root@localhost:3306/vnpy
+2026-02-13 15:26:25,342 - quant-vnpy.vnpy_init - INFO - vnpy_init.py:39 -  vnpy MySQL 数据库连接成功
+2026-02-13 15:26:37,984 - quant-vnpy.app - INFO - __init__.py:17 -  Logging system initialized
+2026-02-13 15:26:37,987 - quant-vnpy.vnpy_init - INFO - vnpy_init.py:25 -  初始化 vnpy 数据库: root@localhost:3306/vnpy
+2026-02-13 15:26:38,050 - quant-vnpy.vnpy_init - INFO - vnpy_init.py:39 -  vnpy MySQL 数据库连接成功
+2026-02-13 15:26:50,667 - quant-vnpy.app - INFO - __init__.py:17 -  Logging system initialized
+2026-02-13 15:26:50,672 - quant-vnpy.vnpy_init - INFO - vnpy_init.py:25 -  初始化 vnpy 数据库: root@localhost:3306/vnpy
+2026-02-13 15:26:50,748 - quant-vnpy.vnpy_init - INFO - vnpy_init.py:39 -  vnpy MySQL 数据库连接成功
+2026-02-13 15:27:18,157 - quant-vnpy.app - INFO - __init__.py:17 -  Logging system initialized
+2026-02-13 15:27:18,159 - quant-vnpy.vnpy_init - INFO - vnpy_init.py:25 -  初始化 vnpy 数据库: root@localhost:3306/vnpy
+2026-02-13 15:27:18,215 - quant-vnpy.vnpy_init - INFO - vnpy_init.py:39 -  vnpy MySQL 数据库连接成功
+2026-02-13 15:41:51,457 - quant-vnpy.app - INFO - __init__.py:17 -  Logging system initialized
+2026-02-13 15:41:51,460 - quant-vnpy.vnpy_init - INFO - vnpy_init.py:25 -  初始化 vnpy 数据库: root@localhost:3306/vnpy
+2026-02-13 15:41:51,512 - quant-vnpy.vnpy_init - INFO - vnpy_init.py:39 -  vnpy MySQL 数据库连接成功
+2026-02-13 15:41:52,224 - quant-vnpy.app - INFO - __init__.py:17 -  Logging system initialized
+2026-02-13 15:41:52,227 - quant-vnpy.vnpy_init - INFO - vnpy_init.py:25 -  初始化 vnpy 数据库: root@localhost:3306/vnpy
+2026-02-13 15:41:52,275 - quant-vnpy.vnpy_init - INFO - vnpy_init.py:39 -  vnpy MySQL 数据库连接成功
+2026-02-13 15:49:17,376 - quant-vnpy.app - INFO - __init__.py:17 -  Logging system initialized
+2026-02-13 15:49:17,378 - quant-vnpy.vnpy_init - INFO - vnpy_init.py:25 -  初始化 vnpy 数据库: root@localhost:3306/vnpy
+2026-02-13 15:49:17,439 - quant-vnpy.vnpy_init - INFO - vnpy_init.py:39 -  vnpy MySQL 数据库连接成功
+2026-02-13 15:49:42,965 - quant-vnpy.app - INFO - __init__.py:17 -  Logging system initialized
+2026-02-13 15:49:42,967 - quant-vnpy.vnpy_init - INFO - vnpy_init.py:25 -  初始化 vnpy 数据库: root@localhost:3306/vnpy
+2026-02-13 15:49:43,029 - quant-vnpy.vnpy_init - INFO - vnpy_init.py:39 -  vnpy MySQL 数据库连接成功
+2026-02-13 15:51:04,392 - quant-vnpy.fetcher - INFO - data_sources.py:374 - [reqId:63145e7e-db26-4db4-a497-ae0a41a1176a] Baostock查询数据返回状态码: 0
+2026-02-13 15:51:04,393 - quant-vnpy.fetcher - INFO - data_sources.py:375 - [reqId:63145e7e-db26-4db4-a497-ae0a41a1176a] Baostock查询数据返回消息: success
+2026-02-13 15:51:44,464 - quant-vnpy.fetcher - INFO - data_sources.py:374 - [reqId:263133c6-b272-43a5-b5e5-29554c5c809d] Baostock查询数据返回状态码: 0
+2026-02-13 15:51:44,467 - quant-vnpy.fetcher - INFO - data_sources.py:375 - [reqId:263133c6-b272-43a5-b5e5-29554c5c809d] Baostock查询数据返回消息: success
+2026-02-13 15:53:06,613 - quant-vnpy.app - INFO - __init__.py:17 -  Logging system initialized
+2026-02-13 15:53:06,617 - quant-vnpy.vnpy_init - INFO - vnpy_init.py:25 -  初始化 vnpy 数据库: root@localhost:3306/vnpy
+2026-02-13 15:53:06,673 - quant-vnpy.vnpy_init - INFO - vnpy_init.py:39 -  vnpy MySQL 数据库连接成功
+2026-02-13 15:53:10,932 - quant-vnpy.app - INFO - __init__.py:17 -  Logging system initialized
+2026-02-13 15:53:10,935 - quant-vnpy.vnpy_init - INFO - vnpy_init.py:25 -  初始化 vnpy 数据库: root@localhost:3306/vnpy
+2026-02-13 15:53:10,993 - quant-vnpy.vnpy_init - INFO - vnpy_init.py:39 -  vnpy MySQL 数据库连接成功
+2026-02-13 15:53:31,153 - quant-vnpy.app - INFO - __init__.py:17 -  Logging system initialized
+2026-02-13 15:53:31,157 - quant-vnpy.vnpy_init - INFO - vnpy_init.py:25 -  初始化 vnpy 数据库: root@localhost:3306/vnpy
+2026-02-13 15:53:31,224 - quant-vnpy.vnpy_init - INFO - vnpy_init.py:39 -  vnpy MySQL 数据库连接成功
+2026-02-13 15:53:34,452 - quant-vnpy.app - INFO - __init__.py:17 -  Logging system initialized
+2026-02-13 15:53:34,455 - quant-vnpy.vnpy_init - INFO - vnpy_init.py:25 -  初始化 vnpy 数据库: root@localhost:3306/vnpy
+2026-02-13 15:53:34,532 - quant-vnpy.vnpy_init - INFO - vnpy_init.py:39 -  vnpy MySQL 数据库连接成功
+2026-02-13 15:53:41,814 - quant-vnpy.fetcher - INFO - data_sources.py:374 - [reqId:acc6dd1d-ee97-4be8-ac76-559df48a0116] Baostock查询数据返回状态码: 0
+2026-02-13 15:53:41,814 - quant-vnpy.fetcher - INFO - data_sources.py:375 - [reqId:acc6dd1d-ee97-4be8-ac76-559df48a0116] Baostock查询数据返回消息: success
+2026-02-13 15:56:31,080 - quant-vnpy.app - INFO - __init__.py:17 -  Logging system initialized
+2026-02-13 15:56:31,083 - quant-vnpy.vnpy_init - INFO - vnpy_init.py:25 -  初始化 vnpy 数据库: root@localhost:3306/vnpy
+2026-02-13 15:56:31,146 - quant-vnpy.vnpy_init - INFO - vnpy_init.py:39 -  vnpy MySQL 数据库连接成功
+2026-02-13 15:56:39,554 - quant-vnpy.app - INFO - __init__.py:17 -  Logging system initialized
+2026-02-13 15:56:39,557 - quant-vnpy.vnpy_init - INFO - vnpy_init.py:25 -  初始化 vnpy 数据库: root@localhost:3306/vnpy
+2026-02-13 15:56:39,613 - quant-vnpy.vnpy_init - INFO - vnpy_init.py:39 -  vnpy MySQL 数据库连接成功
+2026-02-13 15:56:42,719 - quant-vnpy.app - INFO - __init__.py:17 -  Logging system initialized
+2026-02-13 15:56:42,723 - quant-vnpy.vnpy_init - INFO - vnpy_init.py:25 -  初始化 vnpy 数据库: root@localhost:3306/vnpy
+2026-02-13 15:56:42,776 - quant-vnpy.vnpy_init - INFO - vnpy_init.py:39 -  vnpy MySQL 数据库连接成功
+2026-02-13 15:56:46,677 - quant-vnpy.fetcher - INFO - data_sources.py:374 - [reqId:5cc91859-8c38-4aeb-80ed-b81f3fa561f5] Baostock查询数据返回状态码: 0
+2026-02-13 15:56:46,680 - quant-vnpy.fetcher - INFO - data_sources.py:375 - [reqId:5cc91859-8c38-4aeb-80ed-b81f3fa561f5] Baostock查询数据返回消息: success
+2026-02-13 15:57:52,022 - quant-vnpy.fetcher - INFO - data_sources.py:374 - [reqId:c016807e-f2ba-4409-b0fe-5d4ff2c902fd] Baostock查询数据返回状态码: 0
+2026-02-13 15:57:52,023 - quant-vnpy.fetcher - INFO - data_sources.py:375 - [reqId:c016807e-f2ba-4409-b0fe-5d4ff2c902fd] Baostock查询数据返回消息: success
+2026-02-13 15:58:46,238 - quant-vnpy.app - INFO - __init__.py:17 -  Logging system initialized
+2026-02-13 15:58:46,241 - quant-vnpy.vnpy_init - INFO - vnpy_init.py:25 -  初始化 vnpy 数据库: root@localhost:3306/vnpy
+2026-02-13 15:58:46,289 - quant-vnpy.vnpy_init - INFO - vnpy_init.py:39 -  vnpy MySQL 数据库连接成功
+2026-02-13 15:58:46,979 - quant-vnpy.app - INFO - __init__.py:17 -  Logging system initialized
+2026-02-13 15:58:46,982 - quant-vnpy.vnpy_init - INFO - vnpy_init.py:25 -  初始化 vnpy 数据库: root@localhost:3306/vnpy
+2026-02-13 15:58:47,026 - quant-vnpy.vnpy_init - INFO - vnpy_init.py:39 -  vnpy MySQL 数据库连接成功
+2026-02-13 15:58:50,791 - quant-vnpy.fetcher - INFO - data_sources.py:374 - [reqId:1eced897-9e71-4a6b-b931-890c9600cbfd] Baostock查询数据返回状态码: 0
+2026-02-13 15:58:50,791 - quant-vnpy.fetcher - INFO - data_sources.py:375 - [reqId:1eced897-9e71-4a6b-b931-890c9600cbfd] Baostock查询数据返回消息: success
+2026-02-13 15:58:50,877 - quant-vnpy.StockFetcher - ERROR - stock_fetcher.py:140 - [reqId:1eced897-9e71-4a6b-b931-890c9600cbfd] 保存股票数据失败: name 'symbol' is not defined
+2026-02-13 15:59:17,009 - quant-vnpy.app - INFO - __init__.py:17 -  Logging system initialized
+2026-02-13 15:59:17,012 - quant-vnpy.vnpy_init - INFO - vnpy_init.py:25 -  初始化 vnpy 数据库: root@localhost:3306/vnpy
+2026-02-13 15:59:17,067 - quant-vnpy.vnpy_init - INFO - vnpy_init.py:39 -  vnpy MySQL 数据库连接成功
+2026-02-13 15:59:23,858 - quant-vnpy.fetcher - INFO - data_sources.py:374 - [reqId:198d9f21-2636-47e1-b01c-c4f39cecbf9e] Baostock查询数据返回状态码: 0
+2026-02-13 15:59:23,859 - quant-vnpy.fetcher - INFO - data_sources.py:375 - [reqId:198d9f21-2636-47e1-b01c-c4f39cecbf9e] Baostock查询数据返回消息: success
+2026-02-13 15:59:24,401 - quant-vnpy.StockFetcher - INFO - stock_fetcher.py:137 - [reqId:198d9f21-2636-47e1-b01c-c4f39cecbf9e] 开始保存数据到数据库: 29条
+2026-02-13 15:59:53,379 - quant-vnpy.app - INFO - __init__.py:17 -  Logging system initialized
+2026-02-13 15:59:53,395 - quant-vnpy.vnpy_init - INFO - vnpy_init.py:25 -  初始化 vnpy 数据库: root@localhost:3306/vnpy
+2026-02-13 15:59:53,558 - quant-vnpy.vnpy_init - INFO - vnpy_init.py:39 -  vnpy MySQL 数据库连接成功
+2026-02-13 15:59:54,056 - quant-vnpy.fetcher - INFO - data_sources.py:374 - [reqId:80bff1a7-952c-4876-a9ee-e6c2a81e507d] Baostock查询数据返回状态码: 0
+2026-02-13 15:59:54,057 - quant-vnpy.fetcher - INFO - data_sources.py:375 - [reqId:80bff1a7-952c-4876-a9ee-e6c2a81e507d] Baostock查询数据返回消息: success
+2026-02-13 15:59:54,119 - quant-vnpy.StockFetcher - INFO - stock_fetcher.py:137 - [reqId:80bff1a7-952c-4876-a9ee-e6c2a81e507d] bars: [BarData(gateway_name='BAOSTOCK', extra=None, symbol='600000', exchange=<Exchange.SSE: 'SSE'>, datetime=Timestamp('2023-01-03 00:00:00'), interval=<Interval.DAILY: 'd'>, volume=25892521.0, turnover=0, open_interest=0.0, open_price=7.27, high_price=7.28, low_price=7.17, close_price=7.23), BarData(gateway_name='BAOSTOCK', extra=None, symbol='600000', exchange=<Exchange.SSE: 'SSE'>, datetime=Timestamp('2023-01-04 00:00:00'), interval=<Interval.DAILY: 'd'>, volume=30947081.0, turnover=0, open_interest=0.0, open_price=7.27, high_price=7.35, low_price=7.23, close_price=7.31), BarData(gateway_name='BAOSTOCK', extra=None, symbol='600000', exchange=<Exchange.SSE: 'SSE'>, datetime=Timestamp('2023-01-05 00:00:00'), interval=<Interval.DAILY: 'd'>, volume=30162154.0, turnover=0, open_interest=0.0, open_price=7.37, high_price=7.38, low_price=7.3, close_price=7.35), BarData(gateway_name='BAOSTOCK', extra=None, symbol='600000', exchange=<Exchange.SSE: 'SSE'>, datetime=Timestamp('2023-01-06 00:00:00'), interval=<Interval.DAILY: 'd'>, volume=20312881.0, turnover=0, open_interest=0.0, open_price=7.35, high_price=7.38, low_price=7.31, close_price=7.34), BarData(gateway_name='BAOSTOCK', extra=None, symbol='600000', exchange=<Exchange.SSE: 'SSE'>, datetime=Timestamp('2023-01-07 00:00:00'), interval=<Interval.DAILY: 'd'>, volume=20312881.0, turnover=0, open_interest=0.0, open_price=7.35, high_price=7.38, low_price=7.31, close_price=7.34), BarData(gateway_name='BAOSTOCK', extra=None, symbol='600000', exchange=<Exchange.SSE: 'SSE'>, datetime=Timestamp('2023-01-08 00:00:00'), interval=<Interval.DAILY: 'd'>, volume=20312881.0, turnover=0, open_interest=0.0, open_price=7.35, high_price=7.38, low_price=7.31, close_price=7.34), BarData(gateway_name='BAOSTOCK', extra=None, symbol='600000', exchange=<Exchange.SSE: 'SSE'>, datetime=Timestamp('2023-01-09 00:00:00'), interval=<Interval.DAILY: 'd'>, volume=19612260.0, turnover=0, open_interest=0.0, open_price=7.38, high_price=7.38, low_price=7.3, close_price=7.34), BarData(gateway_name='BAOSTOCK', extra=None, symbol='600000', exchange=<Exchange.SSE: 'SSE'>, datetime=Timestamp('2023-01-10 00:00:00'), interval=<Interval.DAILY: 'd'>, volume=16194647.0, turnover=0, open_interest=0.0, open_price=7.35, high_price=7.35, low_price=7.28, close_price=7.28), BarData(gateway_name='BAOSTOCK', extra=None, symbol='600000', exchange=<Exchange.SSE: 'SSE'>, datetime=Timestamp('2023-01-11 00:00:00'), interval=<Interval.DAILY: 'd'>, volume=19215541.0, turnover=0, open_interest=0.0, open_price=7.31, high_price=7.34, low_price=7.27, close_price=7.3), BarData(gateway_name='BAOSTOCK', extra=None, symbol='600000', exchange=<Exchange.SSE: 'SSE'>, datetime=Timestamp('2023-01-12 00:00:00'), interval=<Interval.DAILY: 'd'>, volume=16849908.0, turnover=0, open_interest=0.0, open_price=7.33, high_price=7.34, low_price=7.24, close_price=7.27), BarData(gateway_name='BAOSTOCK', extra=None, symbol='600000', exchange=<Exchange.SSE: 'SSE'>, datetime=Timestamp('2023-01-13 00:00:00'), interval=<Interval.DAILY: 'd'>, volume=21770211.0, turnover=0, open_interest=0.0, open_price=7.29, high_price=7.35, low_price=7.27, close_price=7.34), BarData(gateway_name='BAOSTOCK', extra=None, symbol='600000', exchange=<Exchange.SSE: 'SSE'>, datetime=Timestamp('2023-01-14 00:00:00'), interval=<Interval.DAILY: 'd'>, volume=21770211.0, turnover=0, open_interest=0.0, open_price=7.29, high_price=7.35, low_price=7.27, close_price=7.34), BarData(gateway_name='BAOSTOCK', extra=None, symbol='600000', exchange=<Exchange.SSE: 'SSE'>, datetime=Timestamp('2023-01-15 00:00:00'), interval=<Interval.DAILY: 'd'>, volume=21770211.0, turnover=0, open_interest=0.0, open_price=7.29, high_price=7.35, low_price=7.27, close_price=7.34), BarData(gateway_name='BAOSTOCK', extra=None, symbol='600000', exchange=<Exchange.SSE: 'SSE'>, datetime=Timestamp('2023-01-16 00:00:00'), interval=<Interval.DAILY: 'd'>, volume=36816941.0, turnover=0, open_interest=0.0, open_price=7.35, high_price=7.38, low_price=7.28, close_price=7.33), BarData(gateway_name='BAOSTOCK', extra=None, symbol='600000', exchange=<Exchange.SSE: 'SSE'>, datetime=Timestamp('2023-01-17 00:00:00'), interval=<Interval.DAILY: 'd'>, volume=24222613.0, turnover=0, open_interest=0.0, open_price=7.34, high_price=7.35, low_price=7.27, close_price=7.3), BarData(gateway_name='BAOSTOCK', extra=None, symbol='600000', exchange=<Exchange.SSE: 'SSE'>, datetime=Timestamp('2023-01-18 00:00:00'), interval=<Interval.DAILY: 'd'>, volume=24494551.0, turnover=0, open_interest=0.0, open_price=7.31, high_price=7.33, low_price=7.27, close_price=7.31), BarData(gateway_name='BAOSTOCK', extra=None, symbol='600000', exchange=<Exchange.SSE: 'SSE'>, datetime=Timestamp('2023-01-19 00:00:00'), interval=<Interval.DAILY: 'd'>, volume=16713352.0, turnover=0, open_interest=0.0, open_price=7.31, high_price=7.33, low_price=7.26, close_price=7.33), BarData(gateway_name='BAOSTOCK', extra=None, symbol='600000', exchange=<Exchange.SSE: 'SSE'>, datetime=Timestamp('2023-01-20 00:00:00'), interval=<Interval.DAILY: 'd'>, volume=20986958.0, turnover=0, open_interest=0.0, open_price=7.34, high_price=7.36, low_price=7.32, close_price=7.36), BarData(gateway_name='BAOSTOCK', extra=None, symbol='600000', exchange=<Exchange.SSE: 'SSE'>, datetime=Timestamp('2023-01-21 00:00:00'), interval=<Interval.DAILY: 'd'>, volume=20986958.0, turnover=0, open_interest=0.0, open_price=7.34, high_price=7.36, low_price=7.32, close_price=7.36), BarData(gateway_name='BAOSTOCK', extra=None, symbol='600000', exchange=<Exchange.SSE: 'SSE'>, datetime=Timestamp('2023-01-22 00:00:00'), interval=<Interval.DAILY: 'd'>, volume=20986958.0, turnover=0, open_interest=0.0, open_price=7.34, high_price=7.36, low_price=7.32, close_price=7.36), BarData(gateway_name='BAOSTOCK', extra=None, symbol='600000', exchange=<Exchange.SSE: 'SSE'>, datetime=Timestamp('2023-01-23 00:00:00'), interval=<Interval.DAILY: 'd'>, volume=20986958.0, turnover=0, open_interest=0.0, open_price=7.34, high_price=7.36, low_price=7.32, close_price=7.36), BarData(gateway_name='BAOSTOCK', extra=None, symbol='600000', exchange=<Exchange.SSE: 'SSE'>, datetime=Timestamp('2023-01-24 00:00:00'), interval=<Interval.DAILY: 'd'>, volume=20986958.0, turnover=0, open_interest=0.0, open_price=7.34, high_price=7.36, low_price=7.32, close_price=7.36), BarData(gateway_name='BAOSTOCK', extra=None, symbol='600000', exchange=<Exchange.SSE: 'SSE'>, datetime=Timestamp('2023-01-25 00:00:00'), interval=<Interval.DAILY: 'd'>, volume=20986958.0, turnover=0, open_interest=0.0, open_price=7.34, high_price=7.36, low_price=7.32, close_price=7.36), BarData(gateway_name='BAOSTOCK', extra=None, symbol='600000', exchange=<Exchange.SSE: 'SSE'>, datetime=Timestamp('2023-01-26 00:00:00'), interval=<Interval.DAILY: 'd'>, volume=20986958.0, turnover=0, open_interest=0.0, open_price=7.34, high_price=7.36, low_price=7.32, close_price=7.36), BarData(gateway_name='BAOSTOCK', extra=None, symbol='600000', exchange=<Exchange.SSE: 'SSE'>, datetime=Timestamp('2023-01-27 00:00:00'), interval=<Interval.DAILY: 'd'>, volume=20986958.0, turnover=0, open_interest=0.0, open_price=7.34, high_price=7.36, low_price=7.32, close_price=7.36), BarData(gateway_name='BAOSTOCK', extra=None, symbol='600000', exchange=<Exchange.SSE: 'SSE'>, datetime=Timestamp('2023-01-28 00:00:00'), interval=<Interval.DAILY: 'd'>, volume=20986958.0, turnover=0, open_interest=0.0, open_price=7.34, high_price=7.36, low_price=7.32, close_price=7.36), BarData(gateway_name='BAOSTOCK', extra=None, symbol='600000', exchange=<Exchange.SSE: 'SSE'>, datetime=Timestamp('2023-01-29 00:00:00'), interval=<Interval.DAILY: 'd'>, volume=20986958.0, turnover=0, open_interest=0.0, open_price=7.34, high_price=7.36, low_price=7.32, close_price=7.36), BarData(gateway_name='BAOSTOCK', extra=None, symbol='600000', exchange=<Exchange.SSE: 'SSE'>, datetime=Timestamp('2023-01-30 00:00:00'), interval=<Interval.DAILY: 'd'>, volume=31810739.0, turnover=0, open_interest=0.0, open_price=7.43, high_price=7.43, low_price=7.37, close_price=7.4), BarData(gateway_name='BAOSTOCK', extra=None, symbol='600000', exchange=<Exchange.SSE: 'SSE'>, datetime=Timestamp('2023-01-31 00:00:00'), interval=<Interval.DAILY: 'd'>, volume=28438220.0, turnover=0, open_interest=0.0, open_price=7.42, high_price=7.45, low_price=7.37, close_price=7.37)]
+2026-02-13 16:00:14,205 - quant-vnpy.app - INFO - __init__.py:17 -  Logging system initialized
+2026-02-13 16:00:14,208 - quant-vnpy.vnpy_init - INFO - vnpy_init.py:25 -  初始化 vnpy 数据库: root@localhost:3306/vnpy
+2026-02-13 16:00:14,273 - quant-vnpy.vnpy_init - INFO - vnpy_init.py:39 -  vnpy MySQL 数据库连接成功
+2026-02-13 16:01:55,889 - quant-vnpy.app - INFO - __init__.py:17 -  Logging system initialized
+2026-02-13 16:01:55,891 - quant-vnpy.vnpy_init - INFO - vnpy_init.py:25 -  初始化 vnpy 数据库: root@localhost:3306/vnpy
+2026-02-13 16:01:55,945 - quant-vnpy.vnpy_init - INFO - vnpy_init.py:39 -  vnpy MySQL 数据库连接成功
+2026-02-13 16:02:06,618 - quant-vnpy.app - INFO - __init__.py:17 -  Logging system initialized
+2026-02-13 16:02:06,620 - quant-vnpy.vnpy_init - INFO - vnpy_init.py:25 -  初始化 vnpy 数据库: root@localhost:3306/vnpy
+2026-02-13 16:02:06,689 - quant-vnpy.vnpy_init - INFO - vnpy_init.py:39 -  vnpy MySQL 数据库连接成功
+2026-02-13 16:02:11,367 - quant-vnpy.app - INFO - __init__.py:17 -  Logging system initialized
+2026-02-13 16:02:11,370 - quant-vnpy.vnpy_init - INFO - vnpy_init.py:25 -  初始化 vnpy 数据库: root@localhost:3306/vnpy
+2026-02-13 16:02:11,431 - quant-vnpy.vnpy_init - INFO - vnpy_init.py:39 -  vnpy MySQL 数据库连接成功
+2026-02-13 16:02:46,451 - quant-vnpy.app - INFO - __init__.py:17 -  Logging system initialized
+2026-02-13 16:02:46,453 - quant-vnpy.vnpy_init - INFO - vnpy_init.py:25 -  初始化 vnpy 数据库: root@localhost:3306/vnpy
+2026-02-13 16:02:46,513 - quant-vnpy.vnpy_init - INFO - vnpy_init.py:39 -  vnpy MySQL 数据库连接成功
+2026-02-13 16:20:35,872 - quant-vnpy.app - INFO - __init__.py:17 -  Logging system initialized
+2026-02-13 16:20:35,876 - quant-vnpy.vnpy_init - INFO - vnpy_init.py:25 -  初始化 vnpy 数据库: root@localhost:3306/vnpy
+2026-02-13 16:20:35,993 - quant-vnpy.vnpy_init - INFO - vnpy_init.py:39 -  vnpy MySQL 数据库连接成功
+2026-02-13 16:20:36,713 - quant-vnpy.app - INFO - __init__.py:17 -  Logging system initialized
+2026-02-13 16:20:36,715 - quant-vnpy.vnpy_init - INFO - vnpy_init.py:25 -  初始化 vnpy 数据库: root@localhost:3306/vnpy
+2026-02-13 16:20:36,770 - quant-vnpy.vnpy_init - INFO - vnpy_init.py:39 -  vnpy MySQL 数据库连接成功
+2026-02-13 16:20:45,063 - quant-vnpy.fetcher - INFO - data_sources.py:401 - [reqId:6dad1802-2ee9-420d-8e17-21740bb04cc1] Baostock查询数据返回状态码: 0
+2026-02-13 16:20:45,065 - quant-vnpy.fetcher - INFO - data_sources.py:402 - [reqId:6dad1802-2ee9-420d-8e17-21740bb04cc1] Baostock查询数据返回消息: success
+2026-02-13 16:24:21,438 - quant-vnpy.backtest.api - INFO - routes.py:136 - [reqId:4ddf00c4-e7ea-45d3-9e37-7df44eadfb51] Parameters: strategy_name=rsi, symbol=600000, exchange=SSE, interval=1m, start=2023-01-01 00:00:00, end=2023-01-31 23:59:59
+2026-02-13 16:24:21,484 - quant-vnpy.backtest.engine - INFO - backtest_engine.py:91 - [reqId:4ddf00c4-e7ea-45d3-9e37-7df44eadfb51] 开始运行回测，历史数据数量: 0
+2026-02-13 16:24:21,485 - quant-vnpy.backtest.engine - WARNING - backtest_engine.py:93 - [reqId:4ddf00c4-e7ea-45d3-9e37-7df44eadfb51] 历史数据为空，请检查数据库中是否有对应的数据
+2026-02-13 16:24:21,489 - quant-vnpy.backtest.engine - INFO - backtest_engine.py:100 - [reqId:4ddf00c4-e7ea-45d3-9e37-7df44eadfb51] 回测完成，成交记录数量: 0
+2026-02-13 16:24:21,489 - quant-vnpy.backtest.engine - INFO - backtest_engine.py:91 - [reqId:4ddf00c4-e7ea-45d3-9e37-7df44eadfb51] 开始运行回测，历史数据数量: 0
+2026-02-13 16:24:21,490 - quant-vnpy.backtest.engine - WARNING - backtest_engine.py:93 - [reqId:4ddf00c4-e7ea-45d3-9e37-7df44eadfb51] 历史数据为空，请检查数据库中是否有对应的数据
+2026-02-13 16:24:21,492 - quant-vnpy.backtest.engine - INFO - backtest_engine.py:100 - [reqId:4ddf00c4-e7ea-45d3-9e37-7df44eadfb51] 回测完成，成交记录数量: 0
+2026-02-13 16:24:21,492 - quant-vnpy.backtest.api - INFO - routes.py:200 - [reqId:4ddf00c4-e7ea-45d3-9e37-7df44eadfb51] get_trades() returned type: <class 'dict'>, length: 0
+2026-02-13 16:31:36,985 - quant-vnpy.app - INFO - __init__.py:17 -  Logging system initialized
+2026-02-13 16:31:36,987 - quant-vnpy.vnpy_init - INFO - vnpy_init.py:25 -  初始化 vnpy 数据库: root@localhost:3306/vnpy
+2026-02-13 16:31:37,045 - quant-vnpy.vnpy_init - INFO - vnpy_init.py:39 -  vnpy MySQL 数据库连接成功
+2026-02-13 16:31:48,619 - quant-vnpy.app - INFO - __init__.py:17 -  Logging system initialized
+2026-02-13 16:31:48,622 - quant-vnpy.vnpy_init - INFO - vnpy_init.py:25 -  初始化 vnpy 数据库: root@localhost:3306/vnpy
+2026-02-13 16:31:48,677 - quant-vnpy.vnpy_init - INFO - vnpy_init.py:39 -  vnpy MySQL 数据库连接成功
+2026-02-13 16:32:00,295 - quant-vnpy.app - INFO - __init__.py:17 -  Logging system initialized
+2026-02-13 16:32:00,299 - quant-vnpy.vnpy_init - INFO - vnpy_init.py:25 -  初始化 vnpy 数据库: root@localhost:3306/vnpy
+2026-02-13 16:32:00,363 - quant-vnpy.vnpy_init - INFO - vnpy_init.py:39 -  vnpy MySQL 数据库连接成功
+2026-02-13 16:32:33,277 - quant-vnpy.backtest.engine - INFO - backtest_engine.py:91 -  开始运行回测，历史数据数量: 5
+2026-02-13 16:32:33,278 - quant-vnpy.backtest.engine - INFO - backtest_engine.py:95 -  第一条数据: BarData(gateway_name='DB', extra=None, symbol='000001', exchange=<Exchange.SZSE: 'SZSE'>, datetime=datetime.datetime(2026, 2, 9, 0, 0, tzinfo=zoneinfo.ZoneInfo(key='Asia/Shanghai')), interval=<Interval.DAILY: 'd'>, volume=619716.7, turnover=0.0, open_interest=0.0, open_price=11.05, high_price=11.11, low_price=11.01, close_price=11.07)
+2026-02-13 16:32:33,278 - quant-vnpy.backtest.engine - INFO - backtest_engine.py:96 -  最后一条数据: BarData(gateway_name='DB', extra=None, symbol='000001', exchange=<Exchange.SZSE: 'SZSE'>, datetime=datetime.datetime(2026, 2, 13, 0, 0, tzinfo=zoneinfo.ZoneInfo(key='Asia/Shanghai')), interval=<Interval.DAILY: 'd'>, volume=555047.36, turnover=0.0, open_interest=0.0, open_price=10.96, high_price=10.99, low_price=10.9, close_price=10.91)
+2026-02-13 16:32:33,281 - quant-vnpy.backtest.engine - INFO - backtest_engine.py:100 -  回测完成，成交记录数量: 0
+2026-02-13 16:32:33,282 - quant-vnpy.backtest.engine - INFO - backtest_engine.py:91 -  开始运行回测，历史数据数量: 5
+2026-02-13 16:32:33,282 - quant-vnpy.backtest.engine - INFO - backtest_engine.py:95 -  第一条数据: BarData(gateway_name='DB', extra=None, symbol='000001', exchange=<Exchange.SZSE: 'SZSE'>, datetime=datetime.datetime(2026, 2, 9, 0, 0, tzinfo=zoneinfo.ZoneInfo(key='Asia/Shanghai')), interval=<Interval.DAILY: 'd'>, volume=619716.7, turnover=0.0, open_interest=0.0, open_price=11.05, high_price=11.11, low_price=11.01, close_price=11.07)
+2026-02-13 16:32:33,282 - quant-vnpy.backtest.engine - INFO - backtest_engine.py:96 -  最后一条数据: BarData(gateway_name='DB', extra=None, symbol='000001', exchange=<Exchange.SZSE: 'SZSE'>, datetime=datetime.datetime(2026, 2, 13, 0, 0, tzinfo=zoneinfo.ZoneInfo(key='Asia/Shanghai')), interval=<Interval.DAILY: 'd'>, volume=555047.36, turnover=0.0, open_interest=0.0, open_price=10.96, high_price=10.99, low_price=10.9, close_price=10.91)
+2026-02-13 16:32:33,284 - quant-vnpy.backtest.engine - INFO - backtest_engine.py:100 -  回测完成，成交记录数量: 0
+2026-02-13 16:32:33,292 - quant-vnpy.backtest.engine - INFO - backtest_engine.py:91 -  开始运行回测，历史数据数量: 5
+2026-02-13 16:32:33,293 - quant-vnpy.backtest.engine - INFO - backtest_engine.py:95 -  第一条数据: BarData(gateway_name='DB', extra=None, symbol='000001', exchange=<Exchange.SZSE: 'SZSE'>, datetime=datetime.datetime(2026, 2, 9, 0, 0, tzinfo=zoneinfo.ZoneInfo(key='Asia/Shanghai')), interval=<Interval.DAILY: 'd'>, volume=619716.7, turnover=0.0, open_interest=0.0, open_price=11.05, high_price=11.11, low_price=11.01, close_price=11.07)
+2026-02-13 16:32:33,293 - quant-vnpy.backtest.engine - INFO - backtest_engine.py:96 -  最后一条数据: BarData(gateway_name='DB', extra=None, symbol='000001', exchange=<Exchange.SZSE: 'SZSE'>, datetime=datetime.datetime(2026, 2, 13, 0, 0, tzinfo=zoneinfo.ZoneInfo(key='Asia/Shanghai')), interval=<Interval.DAILY: 'd'>, volume=555047.36, turnover=0.0, open_interest=0.0, open_price=10.96, high_price=10.99, low_price=10.9, close_price=10.91)
+2026-02-13 16:32:33,295 - quant-vnpy.backtest.engine - INFO - backtest_engine.py:100 -  回测完成，成交记录数量: 0
+2026-02-13 16:32:33,296 - quant-vnpy.backtest.engine - INFO - backtest_engine.py:91 -  开始运行回测，历史数据数量: 5
+2026-02-13 16:32:33,296 - quant-vnpy.backtest.engine - INFO - backtest_engine.py:95 -  第一条数据: BarData(gateway_name='DB', extra=None, symbol='000001', exchange=<Exchange.SZSE: 'SZSE'>, datetime=datetime.datetime(2026, 2, 9, 0, 0, tzinfo=zoneinfo.ZoneInfo(key='Asia/Shanghai')), interval=<Interval.DAILY: 'd'>, volume=619716.7, turnover=0.0, open_interest=0.0, open_price=11.05, high_price=11.11, low_price=11.01, close_price=11.07)
+2026-02-13 16:32:33,296 - quant-vnpy.backtest.engine - INFO - backtest_engine.py:96 -  最后一条数据: BarData(gateway_name='DB', extra=None, symbol='000001', exchange=<Exchange.SZSE: 'SZSE'>, datetime=datetime.datetime(2026, 2, 13, 0, 0, tzinfo=zoneinfo.ZoneInfo(key='Asia/Shanghai')), interval=<Interval.DAILY: 'd'>, volume=555047.36, turnover=0.0, open_interest=0.0, open_price=10.96, high_price=10.99, low_price=10.9, close_price=10.91)
+2026-02-13 16:32:33,297 - quant-vnpy.backtest.engine - INFO - backtest_engine.py:100 -  回测完成，成交记录数量: 0
+2026-02-13 16:32:33,303 - quant-vnpy.backtest.engine - INFO - backtest_engine.py:91 -  开始运行回测，历史数据数量: 5
+2026-02-13 16:32:33,303 - quant-vnpy.backtest.engine - INFO - backtest_engine.py:95 -  第一条数据: BarData(gateway_name='DB', extra=None, symbol='000001', exchange=<Exchange.SZSE: 'SZSE'>, datetime=datetime.datetime(2026, 2, 9, 0, 0, tzinfo=zoneinfo.ZoneInfo(key='Asia/Shanghai')), interval=<Interval.DAILY: 'd'>, volume=619716.7, turnover=0.0, open_interest=0.0, open_price=11.05, high_price=11.11, low_price=11.01, close_price=11.07)
+2026-02-13 16:32:33,303 - quant-vnpy.backtest.engine - INFO - backtest_engine.py:96 -  最后一条数据: BarData(gateway_name='DB', extra=None, symbol='000001', exchange=<Exchange.SZSE: 'SZSE'>, datetime=datetime.datetime(2026, 2, 13, 0, 0, tzinfo=zoneinfo.ZoneInfo(key='Asia/Shanghai')), interval=<Interval.DAILY: 'd'>, volume=555047.36, turnover=0.0, open_interest=0.0, open_price=10.96, high_price=10.99, low_price=10.9, close_price=10.91)
+2026-02-13 16:32:33,305 - quant-vnpy.backtest.engine - INFO - backtest_engine.py:100 -  回测完成，成交记录数量: 0
+2026-02-13 16:32:33,305 - quant-vnpy.backtest.engine - INFO - backtest_engine.py:91 -  开始运行回测，历史数据数量: 5
+2026-02-13 16:32:33,305 - quant-vnpy.backtest.engine - INFO - backtest_engine.py:95 -  第一条数据: BarData(gateway_name='DB', extra=None, symbol='000001', exchange=<Exchange.SZSE: 'SZSE'>, datetime=datetime.datetime(2026, 2, 9, 0, 0, tzinfo=zoneinfo.ZoneInfo(key='Asia/Shanghai')), interval=<Interval.DAILY: 'd'>, volume=619716.7, turnover=0.0, open_interest=0.0, open_price=11.05, high_price=11.11, low_price=11.01, close_price=11.07)
+2026-02-13 16:32:33,305 - quant-vnpy.backtest.engine - INFO - backtest_engine.py:96 -  最后一条数据: BarData(gateway_name='DB', extra=None, symbol='000001', exchange=<Exchange.SZSE: 'SZSE'>, datetime=datetime.datetime(2026, 2, 13, 0, 0, tzinfo=zoneinfo.ZoneInfo(key='Asia/Shanghai')), interval=<Interval.DAILY: 'd'>, volume=555047.36, turnover=0.0, open_interest=0.0, open_price=10.96, high_price=10.99, low_price=10.9, close_price=10.91)
+2026-02-13 16:32:33,307 - quant-vnpy.backtest.engine - INFO - backtest_engine.py:100 -  回测完成，成交记录数量: 0
+2026-02-13 16:34:49,528 - quant-vnpy.backtest.engine - INFO - backtest_engine.py:91 -  开始运行回测，历史数据数量: 5
+2026-02-13 16:34:49,528 - quant-vnpy.backtest.engine - INFO - backtest_engine.py:95 -  第一条数据: BarData(gateway_name='DB', extra=None, symbol='000001', exchange=<Exchange.SZSE: 'SZSE'>, datetime=datetime.datetime(2026, 2, 9, 0, 0, tzinfo=zoneinfo.ZoneInfo(key='Asia/Shanghai')), interval=<Interval.DAILY: 'd'>, volume=619716.7, turnover=0.0, open_interest=0.0, open_price=11.05, high_price=11.11, low_price=11.01, close_price=11.07)
+2026-02-13 16:34:49,528 - quant-vnpy.backtest.engine - INFO - backtest_engine.py:96 -  最后一条数据: BarData(gateway_name='DB', extra=None, symbol='000001', exchange=<Exchange.SZSE: 'SZSE'>, datetime=datetime.datetime(2026, 2, 13, 0, 0, tzinfo=zoneinfo.ZoneInfo(key='Asia/Shanghai')), interval=<Interval.DAILY: 'd'>, volume=555047.36, turnover=0.0, open_interest=0.0, open_price=10.96, high_price=10.99, low_price=10.9, close_price=10.91)
+2026-02-13 16:34:49,532 - quant-vnpy.backtest.engine - INFO - backtest_engine.py:100 -  回测完成，成交记录数量: 0
+2026-02-13 16:34:49,533 - quant-vnpy.backtest.engine - INFO - backtest_engine.py:91 -  开始运行回测，历史数据数量: 5
+2026-02-13 16:34:49,533 - quant-vnpy.backtest.engine - INFO - backtest_engine.py:95 -  第一条数据: BarData(gateway_name='DB', extra=None, symbol='000001', exchange=<Exchange.SZSE: 'SZSE'>, datetime=datetime.datetime(2026, 2, 9, 0, 0, tzinfo=zoneinfo.ZoneInfo(key='Asia/Shanghai')), interval=<Interval.DAILY: 'd'>, volume=619716.7, turnover=0.0, open_interest=0.0, open_price=11.05, high_price=11.11, low_price=11.01, close_price=11.07)
+2026-02-13 16:34:49,533 - quant-vnpy.backtest.engine - INFO - backtest_engine.py:96 -  最后一条数据: BarData(gateway_name='DB', extra=None, symbol='000001', exchange=<Exchange.SZSE: 'SZSE'>, datetime=datetime.datetime(2026, 2, 13, 0, 0, tzinfo=zoneinfo.ZoneInfo(key='Asia/Shanghai')), interval=<Interval.DAILY: 'd'>, volume=555047.36, turnover=0.0, open_interest=0.0, open_price=10.96, high_price=10.99, low_price=10.9, close_price=10.91)
+2026-02-13 16:34:49,535 - quant-vnpy.backtest.engine - INFO - backtest_engine.py:100 -  回测完成，成交记录数量: 0
+2026-02-13 16:34:49,543 - quant-vnpy.backtest.engine - INFO - backtest_engine.py:91 -  开始运行回测，历史数据数量: 5
+2026-02-13 16:34:49,543 - quant-vnpy.backtest.engine - INFO - backtest_engine.py:95 -  第一条数据: BarData(gateway_name='DB', extra=None, symbol='000001', exchange=<Exchange.SZSE: 'SZSE'>, datetime=datetime.datetime(2026, 2, 9, 0, 0, tzinfo=zoneinfo.ZoneInfo(key='Asia/Shanghai')), interval=<Interval.DAILY: 'd'>, volume=619716.7, turnover=0.0, open_interest=0.0, open_price=11.05, high_price=11.11, low_price=11.01, close_price=11.07)
+2026-02-13 16:34:49,544 - quant-vnpy.backtest.engine - INFO - backtest_engine.py:96 -  最后一条数据: BarData(gateway_name='DB', extra=None, symbol='000001', exchange=<Exchange.SZSE: 'SZSE'>, datetime=datetime.datetime(2026, 2, 13, 0, 0, tzinfo=zoneinfo.ZoneInfo(key='Asia/Shanghai')), interval=<Interval.DAILY: 'd'>, volume=555047.36, turnover=0.0, open_interest=0.0, open_price=10.96, high_price=10.99, low_price=10.9, close_price=10.91)
+2026-02-13 16:34:49,549 - quant-vnpy.backtest.engine - INFO - backtest_engine.py:100 -  回测完成，成交记录数量: 0
+2026-02-13 16:34:49,581 - quant-vnpy.backtest.engine - INFO - backtest_engine.py:91 -  开始运行回测，历史数据数量: 5
+2026-02-13 16:34:49,581 - quant-vnpy.backtest.engine - INFO - backtest_engine.py:95 -  第一条数据: BarData(gateway_name='DB', extra=None, symbol='000001', exchange=<Exchange.SZSE: 'SZSE'>, datetime=datetime.datetime(2026, 2, 9, 0, 0, tzinfo=zoneinfo.ZoneInfo(key='Asia/Shanghai')), interval=<Interval.DAILY: 'd'>, volume=619716.7, turnover=0.0, open_interest=0.0, open_price=11.05, high_price=11.11, low_price=11.01, close_price=11.07)
+2026-02-13 16:34:49,581 - quant-vnpy.backtest.engine - INFO - backtest_engine.py:96 -  最后一条数据: BarData(gateway_name='DB', extra=None, symbol='000001', exchange=<Exchange.SZSE: 'SZSE'>, datetime=datetime.datetime(2026, 2, 13, 0, 0, tzinfo=zoneinfo.ZoneInfo(key='Asia/Shanghai')), interval=<Interval.DAILY: 'd'>, volume=555047.36, turnover=0.0, open_interest=0.0, open_price=10.96, high_price=10.99, low_price=10.9, close_price=10.91)
+2026-02-13 16:34:49,585 - quant-vnpy.backtest.engine - INFO - backtest_engine.py:100 -  回测完成，成交记录数量: 0
+2026-02-13 16:35:27,282 - quant-vnpy.backtest.engine - INFO - backtest_engine.py:91 -  开始运行回测，历史数据数量: 5
+2026-02-13 16:35:27,283 - quant-vnpy.backtest.engine - INFO - backtest_engine.py:95 -  第一条数据: BarData(gateway_name='DB', extra=None, symbol='000001', exchange=<Exchange.SZSE: 'SZSE'>, datetime=datetime.datetime(2026, 2, 9, 0, 0, tzinfo=zoneinfo.ZoneInfo(key='Asia/Shanghai')), interval=<Interval.DAILY: 'd'>, volume=619716.7, turnover=0.0, open_interest=0.0, open_price=11.05, high_price=11.11, low_price=11.01, close_price=11.07)
+2026-02-13 16:35:27,283 - quant-vnpy.backtest.engine - INFO - backtest_engine.py:96 -  最后一条数据: BarData(gateway_name='DB', extra=None, symbol='000001', exchange=<Exchange.SZSE: 'SZSE'>, datetime=datetime.datetime(2026, 2, 13, 0, 0, tzinfo=zoneinfo.ZoneInfo(key='Asia/Shanghai')), interval=<Interval.DAILY: 'd'>, volume=555047.36, turnover=0.0, open_interest=0.0, open_price=10.96, high_price=10.99, low_price=10.9, close_price=10.91)
+2026-02-13 16:35:27,287 - quant-vnpy.backtest.engine - INFO - backtest_engine.py:100 -  回测完成，成交记录数量: 0
+2026-02-13 16:35:27,287 - quant-vnpy.backtest.engine - INFO - backtest_engine.py:91 -  开始运行回测，历史数据数量: 5
+2026-02-13 16:35:27,288 - quant-vnpy.backtest.engine - INFO - backtest_engine.py:95 -  第一条数据: BarData(gateway_name='DB', extra=None, symbol='000001', exchange=<Exchange.SZSE: 'SZSE'>, datetime=datetime.datetime(2026, 2, 9, 0, 0, tzinfo=zoneinfo.ZoneInfo(key='Asia/Shanghai')), interval=<Interval.DAILY: 'd'>, volume=619716.7, turnover=0.0, open_interest=0.0, open_price=11.05, high_price=11.11, low_price=11.01, close_price=11.07)
+2026-02-13 16:35:27,288 - quant-vnpy.backtest.engine - INFO - backtest_engine.py:96 -  最后一条数据: BarData(gateway_name='DB', extra=None, symbol='000001', exchange=<Exchange.SZSE: 'SZSE'>, datetime=datetime.datetime(2026, 2, 13, 0, 0, tzinfo=zoneinfo.ZoneInfo(key='Asia/Shanghai')), interval=<Interval.DAILY: 'd'>, volume=555047.36, turnover=0.0, open_interest=0.0, open_price=10.96, high_price=10.99, low_price=10.9, close_price=10.91)
+2026-02-13 16:35:27,293 - quant-vnpy.backtest.engine - INFO - backtest_engine.py:100 -  回测完成，成交记录数量: 0
+2026-02-13 16:35:27,309 - quant-vnpy.backtest.engine - INFO - backtest_engine.py:91 -  开始运行回测，历史数据数量: 5
+2026-02-13 16:35:27,309 - quant-vnpy.backtest.engine - INFO - backtest_engine.py:95 -  第一条数据: BarData(gateway_name='DB', extra=None, symbol='000001', exchange=<Exchange.SZSE: 'SZSE'>, datetime=datetime.datetime(2026, 2, 9, 0, 0, tzinfo=zoneinfo.ZoneInfo(key='Asia/Shanghai')), interval=<Interval.DAILY: 'd'>, volume=619716.7, turnover=0.0, open_interest=0.0, open_price=11.05, high_price=11.11, low_price=11.01, close_price=11.07)
+2026-02-13 16:35:27,309 - quant-vnpy.backtest.engine - INFO - backtest_engine.py:96 -  最后一条数据: BarData(gateway_name='DB', extra=None, symbol='000001', exchange=<Exchange.SZSE: 'SZSE'>, datetime=datetime.datetime(2026, 2, 13, 0, 0, tzinfo=zoneinfo.ZoneInfo(key='Asia/Shanghai')), interval=<Interval.DAILY: 'd'>, volume=555047.36, turnover=0.0, open_interest=0.0, open_price=10.96, high_price=10.99, low_price=10.9, close_price=10.91)
+2026-02-13 16:35:27,314 - quant-vnpy.backtest.engine - INFO - backtest_engine.py:100 -  回测完成，成交记录数量: 2
+2026-02-13 16:36:32,358 - quant-vnpy.backtest.engine - INFO - backtest_engine.py:91 -  开始运行回测，历史数据数量: 5
+2026-02-13 16:36:32,358 - quant-vnpy.backtest.engine - INFO - backtest_engine.py:95 -  第一条数据: BarData(gateway_name='DB', extra=None, symbol='000001', exchange=<Exchange.SZSE: 'SZSE'>, datetime=datetime.datetime(2026, 2, 9, 0, 0, tzinfo=zoneinfo.ZoneInfo(key='Asia/Shanghai')), interval=<Interval.DAILY: 'd'>, volume=619716.7, turnover=0.0, open_interest=0.0, open_price=11.05, high_price=11.11, low_price=11.01, close_price=11.07)
+2026-02-13 16:36:32,359 - quant-vnpy.backtest.engine - INFO - backtest_engine.py:96 -  最后一条数据: BarData(gateway_name='DB', extra=None, symbol='000001', exchange=<Exchange.SZSE: 'SZSE'>, datetime=datetime.datetime(2026, 2, 13, 0, 0, tzinfo=zoneinfo.ZoneInfo(key='Asia/Shanghai')), interval=<Interval.DAILY: 'd'>, volume=555047.36, turnover=0.0, open_interest=0.0, open_price=10.96, high_price=10.99, low_price=10.9, close_price=10.91)
+2026-02-13 16:36:32,362 - quant-vnpy.backtest.engine - INFO - backtest_engine.py:100 -  回测完成，成交记录数量: 3
+2026-02-13 16:36:32,376 - quant-vnpy.backtest.engine - INFO - backtest_engine.py:91 -  开始运行回测，历史数据数量: 5
+2026-02-13 16:36:32,376 - quant-vnpy.backtest.engine - INFO - backtest_engine.py:95 -  第一条数据: BarData(gateway_name='DB', extra=None, symbol='000001', exchange=<Exchange.SZSE: 'SZSE'>, datetime=datetime.datetime(2026, 2, 9, 0, 0, tzinfo=zoneinfo.ZoneInfo(key='Asia/Shanghai')), interval=<Interval.DAILY: 'd'>, volume=619716.7, turnover=0.0, open_interest=0.0, open_price=11.05, high_price=11.11, low_price=11.01, close_price=11.07)
+2026-02-13 16:36:32,377 - quant-vnpy.backtest.engine - INFO - backtest_engine.py:96 -  最后一条数据: BarData(gateway_name='DB', extra=None, symbol='000001', exchange=<Exchange.SZSE: 'SZSE'>, datetime=datetime.datetime(2026, 2, 13, 0, 0, tzinfo=zoneinfo.ZoneInfo(key='Asia/Shanghai')), interval=<Interval.DAILY: 'd'>, volume=555047.36, turnover=0.0, open_interest=0.0, open_price=10.96, high_price=10.99, low_price=10.9, close_price=10.91)
+2026-02-13 16:36:32,381 - quant-vnpy.backtest.engine - INFO - backtest_engine.py:100 -  回测完成，成交记录数量: 2

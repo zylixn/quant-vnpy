@@ -83,7 +83,8 @@ download_request = fetcher_ns.model('DownloadRequest', {
     'filename': fields.String(description='文件名', default='600000.csv'),
     'interval': fields.String(description='时间周期', default='1d'),
     'exchange': fields.String(description='交易所', default='SSE'),
-    'api_name': fields.String(description='API名称', default='tushare')
+    'api_name': fields.String(description='API名称', default='tushare'),
+    'format': fields.String(description='格式(csv/json/database)', default='csv')
 })
 
 batch_download_request = fetcher_ns.model('BatchDownloadRequest', {
@@ -93,7 +94,8 @@ batch_download_request = fetcher_ns.model('BatchDownloadRequest', {
     'output_dir': fields.String(description='输出目录', default='data'),
     'interval': fields.String(description='时间周期', default='1d'),
     'exchange': fields.String(description='交易所', default='SSE'),
-    'api_name': fields.String(description='API名称', default='tushare')
+    'api_name': fields.String(description='API名称', default='tushare'),
+    'format': fields.String(description='格式(csv/json/database)', default='csv')
 })
 
 
@@ -191,8 +193,8 @@ class StockList(Resource):
     @fetcher_ns.doc('get_stock_list')
     @fetcher_ns.param('exchange', '交易所', default='SSE')
     @fetcher_ns.param('source', '数据源', default='api')
-    @fetcher_ns.marshal_with(stock_list_response, code=200)
-    @fetcher_ns.marshal_with(response_error, code=500)
+    # @fetcher_ns.marshal_with(stock_list_response, code=200)
+    # @fetcher_ns.marshal_with(response_error, code=500)
     def get(self):
         """获取股票列表"""
         req_id = None
@@ -244,8 +246,8 @@ class StockInfo(Resource):
     @fetcher_ns.param('symbol', '股票代码', default='600000')
     @fetcher_ns.param('exchange', '交易所', default='SSE')
     @fetcher_ns.param('source', '数据源', default='api')
-    @fetcher_ns.marshal_with(stock_info_response, code=200)
-    @fetcher_ns.marshal_with(response_error, code=500)
+    # @fetcher_ns.marshal_with(stock_info_response, code=200)
+    # @fetcher_ns.marshal_with(response_error, code=500)
     def get(self):
         """获取股票信息"""
         req_id = None
@@ -298,8 +300,8 @@ class RealtimeData(Resource):
     @fetcher_ns.param('symbol', '股票代码', default='600000')
     @fetcher_ns.param('exchange', '交易所', default='SSE')
     @fetcher_ns.param('api_name', 'API名称', default='tushare')
-    @fetcher_ns.marshal_with(realtime_data_response, code=200)
-    @fetcher_ns.marshal_with(response_error, code=500)
+    # @fetcher_ns.marshal_with(realtime_data_response, code=200)
+    # @fetcher_ns.marshal_with(response_error, code=500)
     def get(self):
         """获取实时数据"""
         req_id = None
@@ -367,8 +369,8 @@ class IndexComponents(Resource):
     @fetcher_ns.param('index_symbol', '指数代码', default='000001.SH')
     @fetcher_ns.param('date', '日期', default=datetime.now().isoformat())
     @fetcher_ns.param('api_name', 'API名称', default='tushare')
-    @fetcher_ns.marshal_with(index_components_response, code=200)
-    @fetcher_ns.marshal_with(response_error, code=500)
+    # @fetcher_ns.marshal_with(index_components_response, code=200)
+    # @fetcher_ns.marshal_with(response_error, code=500)
     def get(self):
         """获取指数成分股"""
         req_id = None
@@ -415,8 +417,8 @@ class DownloadStockData(Resource):
     
     @fetcher_ns.doc('download_stock_data')
     @fetcher_ns.expect(download_request)
-    @fetcher_ns.marshal_with(download_response, code=200)
-    @fetcher_ns.marshal_with(response_error, code=500)
+    # @fetcher_ns.marshal_with(download_response, code=200)
+    # @fetcher_ns.marshal_with(response_error, code=500)
     def post(self):
         """下载股票数据"""
         req_id = None
@@ -434,6 +436,7 @@ class DownloadStockData(Resource):
             interval = data.get('interval', '1d')
             exchange = data.get('exchange', 'SSE')
             api_name = data.get('api_name', 'tushare')
+            format = data.get('format', 'csv')
             
             # 转换参数
             interval_map = {
@@ -465,13 +468,15 @@ class DownloadStockData(Resource):
                 filename=filename,
                 interval=interval,
                 exchange=exchange,
-                api_name=api_name
+                api_name=api_name,
+                format=format,
             )
             
             # 构建响应
             response = {
                 'status': 'success',
-                'message': f'数据已保存到: {filename}'
+                'message': '数据已保存',
+                'format': format
             }
             
             return response
@@ -489,8 +494,8 @@ class BatchDownloadStockData(Resource):
     
     @fetcher_ns.doc('batch_download_stock_data')
     @fetcher_ns.expect(batch_download_request)
-    @fetcher_ns.marshal_with(download_response, code=200)
-    @fetcher_ns.marshal_with(response_error, code=500)
+    # @fetcher_ns.marshal_with(download_response, code=200)
+    # @fetcher_ns.marshal_with(response_error, code=500)
     def post(self):
         """批量下载股票数据"""
         req_id = None
@@ -508,8 +513,9 @@ class BatchDownloadStockData(Resource):
             interval = data.get('interval', '1d')
             exchange = data.get('exchange', 'SSE')
             api_name = data.get('api_name', 'tushare')
+            format = data.get('format', 'csv')
             # 打印参数
-            logger.info(f"Received batch download request: symbols={symbols}, start={start}, end={end}, output_dir={output_dir}, interval={interval}, exchange={exchange}, api_name={api_name}")
+            logger.info(f"Received batch download request: symbols={symbols}, start={start}, end={end}, output_dir={output_dir}, interval={interval}, exchange={exchange}, api_name={api_name}, format={format}")
             # 转换参数
             interval_map = {
                 '1m': Interval.MINUTE,
@@ -539,7 +545,8 @@ class BatchDownloadStockData(Resource):
                 output_dir=output_dir,
                 interval=interval,
                 exchange=exchange,
-                api_name=api_name
+                api_name=api_name,
+                format=format,
             )
             
             # 构建响应

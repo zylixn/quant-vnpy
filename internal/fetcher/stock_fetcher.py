@@ -9,7 +9,9 @@ from vnpy.trader.constant import Exchange, Interval
 from internal.fetcher.data_sources import LocalDataSource, APIDataSource, DatabaseDataSource
 from internal.fetcher.data_processor import DataProcessor
 from internal.config import get_config
+from internal.utils import get_logger
 
+logger = get_logger("StockFetcher")
 
 class StockFetcher:
     """股票数据获取器"""
@@ -122,7 +124,7 @@ class StockFetcher:
     def save_stock_data(
         self,
         bars: List[BarData],  # K线数据
-        filename: str,  # 文件名
+        filename: str,  # 文件名（当format为csv或json时使用）
         format: str = "csv"  # 格式
     ):
         """保存股票数据"""
@@ -131,18 +133,21 @@ class StockFetcher:
                 self.local_source.save_to_csv(bars, filename)
             elif format == "json":
                 self.local_source.save_to_json(bars, filename)
+            elif format == "mysql":
+                self.db_source.save_data(bars)
         except Exception as e:
-            print(f"保存股票数据失败: {e}")
+            logger.error(f"保存股票数据失败: {e}")
     
     def download_and_save(
         self,
         symbol: str,  # 股票代码
         start: datetime,  # 开始时间
         end: datetime,  # 结束时间
-        filename: str,  # 文件名
+        filename: str,  # 文件名（当format为csv或json时使用）
         interval: Interval = Interval.DAILY,  # 周期
         exchange: Exchange = Exchange.SSE,  # 交易所
-        api_name: str = "tushare"  # API名称
+        api_name: str = "tushare",  # API名称
+        format: str = "csv"  # 格式
     ):
         """下载并保存股票数据"""
         # 获取数据
@@ -159,8 +164,11 @@ class StockFetcher:
         
         # 保存数据
         if bars:
-            self.save_stock_data(bars, filename)
-            print(f"数据已保存到: {filename}")
+            self.save_stock_data(bars, filename, format)
+            if format == "mysql":
+                print(f"数据已保存到数据库: {symbol}")
+            else:
+                print(f"数据已保存到: {filename}")
         else:
             print("未获取到数据")
     
@@ -169,20 +177,25 @@ class StockFetcher:
         symbols: List[str],  # 股票代码列表
         start: datetime,  # 开始时间
         end: datetime,  # 结束时间
-        output_dir: str,  # 输出目录
+        output_dir: str,  # 输出目录（当format为csv或json时使用）
         interval: Interval = Interval.DAILY,  # 周期
         exchange: Exchange = Exchange.SSE,  # 交易所
-        api_name: str = "tushare"  # API名称
+        api_name: str = "tushare",  # API名称
+        format: str = "csv"  # 格式
     ):
         """批量下载股票数据"""
         import os
         
-        # 创建输出目录
-        os.makedirs(output_dir, exist_ok=True)
+        # 创建输出目录（当format为csv或json时）
+        if format not in ["mysql"]:
+            os.makedirs(output_dir, exist_ok=True)
         
         for symbol in symbols:
             print(f"下载 {symbol} ...")
-            filename = os.path.join(output_dir, f"{symbol}.csv")
+            if format not in ["mysql"]:
+                filename = os.path.join(output_dir, f"{symbol}.csv")
+            else:
+                filename = symbol  # MySQL格式下，filename作为股票代码使用
             
             try:
                 self.download_and_save(
@@ -192,7 +205,8 @@ class StockFetcher:
                     filename=filename,
                     interval=interval,
                     exchange=exchange,
-                    api_name=api_name
+                    api_name=api_name,
+                    format=format
                 )
             except Exception as e:
                 print(f"下载 {symbol} 失败: {e}")
