@@ -15,16 +15,14 @@ def initialize_logging():
     logger = get_logger('app')
     logger.info('Logging system initialized')
 
-# 初始化日志系统
-initialize_logging()
-
 def create_app(config_name=None):
     """创建Flask应用实例"""
     app = Flask(__name__)
     
     # 加载配置
     app.config.from_object(TomlConfig())  # 使用TomlConfig类
-    
+    # 初始化日志系统
+    initialize_logging()
     # 创建Flask-RESTX Api对象，用于生成Swagger文档
     api = Api(
         app,

@@ -189,13 +189,13 @@ class DataLoader:
         
         # 重采样
         rule_map = {
-            Interval.MINUTE: '1T',
+            Interval.MINUTE: '1min',
             Interval.HOUR: '1H',
             Interval.DAILY: '1D',
             Interval.WEEKLY: '1W',
         }
         
-        rule = rule_map.get(interval, '1T')
+        rule = rule_map.get(interval, '1min')
         
         resampled = df.resample(rule).agg({
             'open': 'first',
@@ -361,7 +361,18 @@ class DataProcessor:
         # 填充缺失数据
         if fill_missing:
             df = df.sort_values('datetime')
-            df = df.set_index('datetime').asfreq('1T').reset_index()
+            # 根据 interval 选择适当的频率
+            if bars[0].interval == Interval.MINUTE:
+                freq = '1min'
+            elif bars[0].interval == Interval.HOUR:
+                freq = '1H'
+            elif bars[0].interval == Interval.DAILY:
+                freq = '1D'
+            elif bars[0].interval == Interval.WEEKLY:
+                freq = '1W'
+            else:
+                freq = '1D'
+            df = df.set_index('datetime').asfreq(freq).reset_index()
             df.ffill(inplace=True)
         
         # 转换回BarData

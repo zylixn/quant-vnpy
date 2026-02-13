@@ -21,8 +21,8 @@ stock_data_response = fetcher_ns.model('StockDataResponse', {
     'high': fields.Float(description='最高价'),
     'low': fields.Float(description='最低价'),
     'close': fields.Float(description='收盘价'),
-    'volume': fields.Integer(description='成交量'),
-    'open_interest': fields.Integer(description='持仓量')
+    'volume': fields.Float(description='成交量'),
+    'open_interest': fields.Float(description='持仓量')
 })
 
 stock_data_list_response = fetcher_ns.model('StockDataListResponse', {
@@ -103,8 +103,8 @@ class StockData(Resource):
     
     @fetcher_ns.doc('get_stock_data')
     @fetcher_ns.expect(stock_data_request)
-    @fetcher_ns.marshal_with(stock_data_list_response, code=200)
-    @fetcher_ns.marshal_with(response_error, code=500)
+    # @fetcher_ns.marshal_with(stock_data_list_response, code=200)
+    # @fetcher_ns.marshal_with(response_error, code=500)
     def post(self):
         """获取股票数据"""
         try:
@@ -132,10 +132,7 @@ class StockData(Resource):
             
             exchange_map = {
                 'SSE': Exchange.SSE,
-                'SZSE': Exchange.SZSE,
-                'BINANCE': Exchange.BINANCE,
-                'OKEX': Exchange.OKEX,
-                'HUOBI': Exchange.HUOBI
+                'SZSE': Exchange.SZSE
             }
             
             interval = interval_map.get(interval, Interval.DAILY)
@@ -155,7 +152,7 @@ class StockData(Resource):
                 api_name=api_name,
                 **data.get('params', {})
             )
-            
+            logger.info(f"获取股票数据成功, 股票代码: {symbol}, 开始时间: {start}, 结束时间: {end}, 时间周期: {interval}, 数据源: {source}, 交易所: {exchange}, API名称: {api_name}, 数据量: {len(bars)}")
             # 构建响应
             response = {
                 'status': 'success',
@@ -173,7 +170,7 @@ class StockData(Resource):
                 ],
                 'count': len(bars)
             }
-            
+            logger.info(f"返回股票数据成功, response: {response}")
             return response
         except Exception as e:
             return {'error': str(e)}, 500

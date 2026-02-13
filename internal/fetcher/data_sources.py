@@ -371,10 +371,12 @@ class APIDataSource:
                 frequency=freq,
                 adjustflag="3"
             )
-            
+            logger.info(f"Baostock查询数据返回状态码: {rs.error_code}")
+            logger.info(f"Baostock查询数据返回消息: {rs.error_msg}")
             # 转换为BarData
             while (rs.error_code == '0') & rs.next():
                 row = rs.get_row_data()
+                # logger.info(f"Baostock查询数据返回行数据: {row}")
                 bar = BarData(
                     symbol=symbol,
                     exchange=exchange,

@@ -61,7 +61,7 @@ class DataProcessor:
             if not df.empty:
                 interval = df['interval'].iloc[0]
                 if interval == Interval.MINUTE:
-                    freq = '1T'
+                    freq = '1min'
                 elif interval == Interval.HOUR:
                     freq = '1H'
                 elif interval == Interval.DAILY:
@@ -217,7 +217,7 @@ class DataProcessor:
         
         # 重采样
         if target_interval == Interval.MINUTE:
-            freq = '1T'
+            freq = '1min'
         elif target_interval == Interval.HOUR:
             freq = '1H'
         elif target_interval == Interval.DAILY:

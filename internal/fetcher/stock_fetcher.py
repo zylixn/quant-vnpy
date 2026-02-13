@@ -80,7 +80,6 @@ class StockFetcher:
             
         except Exception as e:
             print(f"获取股票数据失败: {e}")
-        
         return bars
     
     def get_stock_list(
